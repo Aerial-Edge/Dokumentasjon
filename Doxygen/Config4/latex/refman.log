@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.5.14)  14 MAY 2023 17:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.5.14)  14 MAY 2023 20:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -960,10 +960,16 @@ LaTeX Font Info:    Font shape `T1/phv/m/it' in size <7> not available
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
 (Font)              scaled to size 6.29996pt on input line 12.
 
-Underfull \hbox (badness 3098) in paragraph at lines 16--17
+Underfull \hbox (badness 10000) in paragraph at lines 16--17
 []\T1/phv/m/n/10 Users [] []:\Users\sin[]_[]p\[]One[]Drive - USN\[]Dokumenter\[
-]Bachelor\[]Doxygen\[]Aedge$\OML/cmm/m/it/10 >$\T1/phv/m/n/10 doxypypy -a -c "C
-[]
+]Bachelor\[]Doxygen\[]Dokumentasjon\[]Doxygen\[]
+ []
+
+
+Overfull \hbox (100.37056pt too wide) in paragraph at lines 16--17
+\T1/phv/m/n/10 Config4$\OML/cmm/m/it/10 >$\T1/phv/m/n/10 doxypypy -a -c "C[]:/U
+sers/sin[]_[]p/One[]Drive - USN/Dokumenter/Bachelor/Doxygen/Dokumentasjon/Doxyg
+en/Config4/camera[]
  []
 
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
@@ -976,32 +982,53 @@ File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <8> not available
 (Font)              Font shape `T1/pcr/m/sl' tried instead on input line 25.
 
+Overfull \vbox (9.67403pt too high) has occurred while \output is active []
+
+
 [9]
-Underfull \hbox (badness 10000) in paragraph at lines 43--44
-\T1/pcr/m/n/8 Users camera[]_[]capture.[]C []:\Users\sin[]_[]p\[]One[]Drive - U
-SN\[]Dokumenter\[]Bachelor\[]Doxygen\[]Aedge$\OML/cmm/m/it/8 >$\T1/pcr/m/n/8 do
-xypypy
+Overfull \hbox (160.34898pt too wide) in paragraph at lines 43--44
+\T1/pcr/m/n/8 Doxygen\[]Config4$\OML/cmm/m/it/8 >$\T1/pcr/m/n/8 doxypypy -a -c 
+"C[]:/Users/sin[]_[]p/One[]Drive - USN/Dokumenter/Bachelor/Doxygen/Dokumentasjo
+n/Doxygen/Config4/camera[]
  []
 
 ) (namespaceobject__detection__c4.tex
-Underfull \hbox (badness 3098) in paragraph at lines 16--17
+Underfull \hbox (badness 10000) in paragraph at lines 16--17
 []\T1/phv/m/n/10 Users [] []:\Users\sin[]_[]p\[]One[]Drive - USN\[]Dokumenter\[
-]Bachelor\[]Doxygen\[]Aedge$\OML/cmm/m/it/10 >$\T1/phv/m/n/10 doxypypy -a -c "C
-[]
+]Bachelor\[]Doxygen\[]Dokumentasjon\[]Doxygen\[]
+ []
+
+
+Overfull \hbox (94.46657pt too wide) in paragraph at lines 16--17
+\T1/phv/m/n/10 Config4$\OML/cmm/m/it/10 >$\T1/phv/m/n/10 doxypypy -a -c "C[]:/U
+sers/sin[]_[]p/One[]Drive - USN/Dokumenter/Bachelor/Doxygen/Dokumentasjon/Doxyg
+en/Config4/object[]
  []
 
 [10]
-Overfull \hbox (21.7674pt too wide) in paragraph at lines 43--44
+Overfull \hbox (28.9377pt too wide) in paragraph at lines 43--44
 \T1/pcr/m/n/8 Users object[]_[]detection[]_[]c4.[]C []:\Users\sin[]_[]p\[]One[]
-Drive - USN\[]Dokumenter\[]Bachelor\[]Doxygen\[]Aedge$\OML/cmm/m/it/8 >$\T1/pcr
-/m/n/8 doxypypy
+Drive - USN\[]Dokumenter\[]Bachelor\[]Doxygen\[]Dokumentasjon\[]
+ []
+
+
+Overfull \hbox (160.34898pt too wide) in paragraph at lines 43--44
+\T1/pcr/m/n/8 Doxygen\[]Config4$\OML/cmm/m/it/8 >$\T1/pcr/m/n/8 doxypypy -a -c 
+"C[]:/Users/sin[]_[]p/One[]Drive - USN/Dokumenter/Bachelor/Doxygen/Dokumentasjo
+n/Doxygen/Config4/object[]
  []
 
 ) (namespaceobject__detection__v1.tex
-Underfull \hbox (badness 3098) in paragraph at lines 15--17
+Underfull \hbox (badness 10000) in paragraph at lines 15--17
 []\T1/phv/m/n/10 Users [] []:\Users\sin[]_[]p\[]One[]Drive - USN\[]Dokumenter\[
-]Bachelor\[]Doxygen\[]Aedge$\OML/cmm/m/it/10 >$\T1/phv/m/n/10 doxypypy -a -c "C
-[]
+]Bachelor\[]Doxygen\[]Dokumentasjon\[]Doxygen\[]
+ []
+
+
+Overfull \hbox (94.46657pt too wide) in paragraph at lines 15--17
+\T1/phv/m/n/10 Config4$\OML/cmm/m/it/10 >$\T1/phv/m/n/10 doxypypy -a -c "C[]:/U
+sers/sin[]_[]p/One[]Drive - USN/Dokumenter/Bachelor/Doxygen/Dokumentasjon/Doxyg
+en/Config4/object[]
  []
 
 LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <7> not available
@@ -1017,10 +1044,16 @@ Underfull \hbox (badness 10000) detected at line 95
  []
 
 [12]
-Overfull \hbox (21.7674pt too wide) in paragraph at lines 144--145
+Overfull \hbox (28.9377pt too wide) in paragraph at lines 144--145
 \T1/pcr/m/n/8 Users object[]_[]detection[]_[]v1.[]C []:\Users\sin[]_[]p\[]One[]
-Drive - USN\[]Dokumenter\[]Bachelor\[]Doxygen\[]Aedge$\OML/cmm/m/it/8 >$\T1/pcr
-/m/n/8 doxypypy
+Drive - USN\[]Dokumenter\[]Bachelor\[]Doxygen\[]Dokumentasjon\[]
+ []
+
+
+Overfull \hbox (160.34898pt too wide) in paragraph at lines 144--145
+\T1/pcr/m/n/8 Doxygen\[]Config4$\OML/cmm/m/it/8 >$\T1/pcr/m/n/8 doxypypy -a -c 
+"C[]:/Users/sin[]_[]p/One[]Drive - USN/Dokumenter/Bachelor/Doxygen/Dokumentasjo
+n/Doxygen/Config4/object[]
  []
 
 [13]
@@ -1077,10 +1110,30 @@ Overfull \hbox (63.15622pt too wide) in paragraph at lines 109--109
 
 [21]) [22]
 Chapter 7.
-(camera__capture_8py.tex) (object__detection__c4_8py.tex [23
+(camera__capture_8py.tex
+Overfull \hbox (138.116pt too wide) in paragraph at lines 21--22
+\T1/phv/m/n/10 Doxygen\[]Config4$\OML/cmm/m/it/10 >$\T1/phv/m/n/10 doxypypy -a 
+-c "C[]:/Users/sin[]_[]p/One[]Drive - USN/Dokumenter/Bachelor/Doxygen/Dokumenta
+sjon/Doxygen/Config4/camera[]
+ []
 
-])
-(object__detection__v1_8py.tex) [24] (refman.ind [25
+) (object__detection__c4_8py.tex
+Overfull \hbox (132.212pt too wide) in paragraph at lines 21--22
+\T1/phv/m/n/10 Doxygen\[]Config4$\OML/cmm/m/it/10 >$\T1/phv/m/n/10 doxypypy -a 
+-c "C[]:/Users/sin[]_[]p/One[]Drive - USN/Dokumenter/Bachelor/Doxygen/Dokumenta
+sjon/Doxygen/Config4/object[]
+ []
+
+[23
+
+]) (object__detection__v1_8py.tex
+Overfull \hbox (132.212pt too wide) in paragraph at lines 20--22
+\T1/phv/m/n/10 Doxygen\[]Config4$\OML/cmm/m/it/10 >$\T1/phv/m/n/10 doxypypy -a 
+-c "C[]:/Users/sin[]_[]p/One[]Drive - USN/Dokumenter/Bachelor/Doxygen/Dokumenta
+sjon/Doxygen/Config4/object[]
+ []
+
+) [24] (refman.ind [25
 
 
 
@@ -1093,7 +1146,7 @@ Package rerunfilecheck Info: File `refman.out' has not changed.
 Here is how much of TeX's memory you used:
  18367 strings out of 476331
  308047 string characters out of 5787765
- 1879660 words of memory out of 5000000
+ 1880660 words of memory out of 5000000
  38261 multiletter control sequences out of 15000+600000
  569278 words of font info for 99 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1111,7 +1164,7 @@ a/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/sin_p/App
 Data/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvb8ac.pfb><C:/Users/sin_p
 /AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Users/si
 n_p/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on refman.pdf (30 pages, 276893 bytes).
+Output written on refman.pdf (30 pages, 277279 bytes).
 PDF statistics:
  894 PDF objects out of 1000 (max. 8388607)
  183 named destinations out of 1000 (max. 500000)

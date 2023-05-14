@@ -1,0 +1,186 @@
+\hypertarget{namespaceutil}{}\doxysection{util Namespace Reference}
+\label{namespaceutil}\index{util@{util}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespaceutil_a844e908aef5e1dba99762e99255bf20b}{calculate\+Position2}} (positions, current\+\_\+yaw)
+\begin{DoxyCompactList}\small\item\em Mock function for position calculation, currently returns a constant value. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespaceutil_a747188581854a521c38c61caccbd6aeb}{calculate\+Position}} (positions, current\+\_\+yaw)
+\begin{DoxyCompactList}\small\item\em Function to calculate the drone\textquotesingle{}s position and velocity. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespaceutil_ae4b9270a2b771b344b7178649af822c3}{angle\+\_\+diff}} (angle\+\_\+1, angle\+\_\+2)
+\begin{DoxyCompactList}\small\item\em Compute the difference between two angles, handling wraparound. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespaceutil_ab82f1f6b2412e2cc7c6110d5dd67c8af}{calculate\+\_\+yaw}} (rot\+\_\+matrix)
+\begin{DoxyCompactList}\small\item\em Function to calculate yaw angle from a rotation matrix. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespaceutil_a3c357fde2b928400c08ab95e2591e62f}{rotation\+\_\+matrix}} (\mbox{\hyperlink{namespaceutil_a3c9752b7e3635946096cdd9e75ad2ff1}{yaw}}, pitch, roll)
+\begin{DoxyCompactList}\small\item\em Function to calculate a rotation matrix given yaw, pitch, and roll. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+Users \mbox{\hyperlink{namespaceutil_af132fe688e14c0fe70f7d54d126f308f}{C}} \+:\textbackslash{}Users\textbackslash{}sin\+\_\+p\textbackslash{}\+One\+Drive -\/ USN\textbackslash{}\+Dokumenter\textbackslash{}\+Bachelor\textbackslash{}\+Doxygen\textbackslash{}\+Dokumentasjon\textbackslash{}\+Doxygen\textbackslash{}\+Pi$>$doxypypy -\/a -\/c \char`\"{}C\+:/Users/sin\+\_\+p/One\+Drive -\/ USN/Dokumenter/Bachelor/Doxygen/Dokumentasjon/Doxygen/Pi/util.\+py\char`\"{}
+\item 
+time \mbox{\hyperlink{namespaceutil_a2f4fb87fdc998cc7b4d771b5202ccc0f}{start\+\_\+time\+\_\+ns}} = time.\+time\+\_\+ns()
+\item 
+time \mbox{\hyperlink{namespaceutil_a52b9123a98e7a3b269111ca65b7caf61}{start\+\_\+time}} = time.\+time()
+\item 
+int \mbox{\hyperlink{namespaceutil_a5639d118be7ac94357324cf7986b909e}{time\+\_\+prev}} = 0
+\item 
+np \mbox{\hyperlink{namespaceutil_a6730c148ee26f50e4de1eec27ef47a8e}{prev\+\_\+vel}} = np.\+zeros(3)
+\item 
+int \mbox{\hyperlink{namespaceutil_a3c9752b7e3635946096cdd9e75ad2ff1}{yaw}} = 0
+\item 
+bool \mbox{\hyperlink{namespaceutil_a4fd51b3dc7f202c42a8f6a64d34e9228}{data\+\_\+failure\+\_\+prev}} = True
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespaceutil_ae4b9270a2b771b344b7178649af822c3}\label{namespaceutil_ae4b9270a2b771b344b7178649af822c3}} 
+\index{util@{util}!angle\_diff@{angle\_diff}}
+\index{angle\_diff@{angle\_diff}!util@{util}}
+\doxysubsubsection{\texorpdfstring{angle\_diff()}{angle\_diff()}}
+{\footnotesize\ttfamily def util.\+angle\+\_\+diff (\begin{DoxyParamCaption}\item[{}]{angle\+\_\+1,  }\item[{}]{angle\+\_\+2 }\end{DoxyParamCaption})}
+
+
+
+Compute the difference between two angles, handling wraparound. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em angle\+\_\+1} & The first angle, in radians. \\
+\hline
+{\em angle\+\_\+2} & The second angle, in radians. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The difference between the two angles, in radians, wrapped to \mbox{[}-\/pi, pi\mbox{]}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespaceutil_ab82f1f6b2412e2cc7c6110d5dd67c8af}\label{namespaceutil_ab82f1f6b2412e2cc7c6110d5dd67c8af}} 
+\index{util@{util}!calculate\_yaw@{calculate\_yaw}}
+\index{calculate\_yaw@{calculate\_yaw}!util@{util}}
+\doxysubsubsection{\texorpdfstring{calculate\_yaw()}{calculate\_yaw()}}
+{\footnotesize\ttfamily def util.\+calculate\+\_\+yaw (\begin{DoxyParamCaption}\item[{}]{rot\+\_\+matrix }\end{DoxyParamCaption})}
+
+
+
+Function to calculate yaw angle from a rotation matrix. 
+
+Returns None if we have a failure at any point.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rot\+\_\+matrix} & A 3x3 rotation matrix. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The calculated yaw angle, or None if a calculation error occurred. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespaceutil_a747188581854a521c38c61caccbd6aeb}\label{namespaceutil_a747188581854a521c38c61caccbd6aeb}} 
+\index{util@{util}!calculatePosition@{calculatePosition}}
+\index{calculatePosition@{calculatePosition}!util@{util}}
+\doxysubsubsection{\texorpdfstring{calculatePosition()}{calculatePosition()}}
+{\footnotesize\ttfamily def util.\+calculate\+Position (\begin{DoxyParamCaption}\item[{}]{positions,  }\item[{}]{current\+\_\+yaw }\end{DoxyParamCaption})}
+
+
+
+Function to calculate the drone\textquotesingle{}s position and velocity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em positions} & The positions of the drone. \\
+\hline
+{\em current\+\_\+yaw} & The current yaw angle of the drone. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a Drone\+Pose object containing position, velocity, acceleration, yaw, and yaw velocity. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespaceutil_a844e908aef5e1dba99762e99255bf20b}\label{namespaceutil_a844e908aef5e1dba99762e99255bf20b}} 
+\index{util@{util}!calculatePosition2@{calculatePosition2}}
+\index{calculatePosition2@{calculatePosition2}!util@{util}}
+\doxysubsubsection{\texorpdfstring{calculatePosition2()}{calculatePosition2()}}
+{\footnotesize\ttfamily def util.\+calculate\+Position2 (\begin{DoxyParamCaption}\item[{}]{positions,  }\item[{}]{current\+\_\+yaw }\end{DoxyParamCaption})}
+
+
+
+Mock function for position calculation, currently returns a constant value. 
+
+This code is borrowed from Hilde Marie Moholt.
+
+
+\begin{DoxyParams}{Parameters}
+{\em positions} & The positions of the drone. \\
+\hline
+{\em current\+\_\+yaw} & The current yaw angle of the drone. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a constant value of 2. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespaceutil_a3c357fde2b928400c08ab95e2591e62f}\label{namespaceutil_a3c357fde2b928400c08ab95e2591e62f}} 
+\index{util@{util}!rotation\_matrix@{rotation\_matrix}}
+\index{rotation\_matrix@{rotation\_matrix}!util@{util}}
+\doxysubsubsection{\texorpdfstring{rotation\_matrix()}{rotation\_matrix()}}
+{\footnotesize\ttfamily def util.\+rotation\+\_\+matrix (\begin{DoxyParamCaption}\item[{}]{yaw,  }\item[{}]{pitch,  }\item[{}]{roll }\end{DoxyParamCaption})}
+
+
+
+Function to calculate a rotation matrix given yaw, pitch, and roll. 
+
+This function is not used in qualisys, but is used to test qualisys.
+
+
+\begin{DoxyParams}{Parameters}
+{\em yaw} & The yaw angle. \\
+\hline
+{\em pitch} & The pitch angle. \\
+\hline
+{\em roll} & The roll angle. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A 3x3 rotation matrix. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespaceutil_af132fe688e14c0fe70f7d54d126f308f}\label{namespaceutil_af132fe688e14c0fe70f7d54d126f308f}} 
+\index{util@{util}!C@{C}}
+\index{C@{C}!util@{util}}
+\doxysubsubsection{\texorpdfstring{C}{C}}
+{\footnotesize\ttfamily Users util.\+C \+:\textbackslash{}Users\textbackslash{}sin\+\_\+p\textbackslash{}\+One\+Drive -\/ USN\textbackslash{}\+Dokumenter\textbackslash{}\+Bachelor\textbackslash{}\+Doxygen\textbackslash{}\+Dokumentasjon\textbackslash{}\+Doxygen\textbackslash{}\+Pi$>$doxypypy -\/a -\/c \char`\"{}C\+:/Users/sin\+\_\+p/One\+Drive -\/ USN/Dokumenter/Bachelor/Doxygen/Dokumentasjon/Doxygen/Pi/util.\+py\char`\"{}}
+
+\mbox{\Hypertarget{namespaceutil_a4fd51b3dc7f202c42a8f6a64d34e9228}\label{namespaceutil_a4fd51b3dc7f202c42a8f6a64d34e9228}} 
+\index{util@{util}!data\_failure\_prev@{data\_failure\_prev}}
+\index{data\_failure\_prev@{data\_failure\_prev}!util@{util}}
+\doxysubsubsection{\texorpdfstring{data\_failure\_prev}{data\_failure\_prev}}
+{\footnotesize\ttfamily bool util.\+data\+\_\+failure\+\_\+prev = True}
+
+\mbox{\Hypertarget{namespaceutil_a6730c148ee26f50e4de1eec27ef47a8e}\label{namespaceutil_a6730c148ee26f50e4de1eec27ef47a8e}} 
+\index{util@{util}!prev\_vel@{prev\_vel}}
+\index{prev\_vel@{prev\_vel}!util@{util}}
+\doxysubsubsection{\texorpdfstring{prev\_vel}{prev\_vel}}
+{\footnotesize\ttfamily np util.\+prev\+\_\+vel = np.\+zeros(3)}
+
+\mbox{\Hypertarget{namespaceutil_a52b9123a98e7a3b269111ca65b7caf61}\label{namespaceutil_a52b9123a98e7a3b269111ca65b7caf61}} 
+\index{util@{util}!start\_time@{start\_time}}
+\index{start\_time@{start\_time}!util@{util}}
+\doxysubsubsection{\texorpdfstring{start\_time}{start\_time}}
+{\footnotesize\ttfamily time util.\+start\+\_\+time = time.\+time()}
+
+\mbox{\Hypertarget{namespaceutil_a2f4fb87fdc998cc7b4d771b5202ccc0f}\label{namespaceutil_a2f4fb87fdc998cc7b4d771b5202ccc0f}} 
+\index{util@{util}!start\_time\_ns@{start\_time\_ns}}
+\index{start\_time\_ns@{start\_time\_ns}!util@{util}}
+\doxysubsubsection{\texorpdfstring{start\_time\_ns}{start\_time\_ns}}
+{\footnotesize\ttfamily time util.\+start\+\_\+time\+\_\+ns = time.\+time\+\_\+ns()}
+
+\mbox{\Hypertarget{namespaceutil_a5639d118be7ac94357324cf7986b909e}\label{namespaceutil_a5639d118be7ac94357324cf7986b909e}} 
+\index{util@{util}!time\_prev@{time\_prev}}
+\index{time\_prev@{time\_prev}!util@{util}}
+\doxysubsubsection{\texorpdfstring{time\_prev}{time\_prev}}
+{\footnotesize\ttfamily int util.\+time\+\_\+prev = 0}
+
+\mbox{\Hypertarget{namespaceutil_a3c9752b7e3635946096cdd9e75ad2ff1}\label{namespaceutil_a3c9752b7e3635946096cdd9e75ad2ff1}} 
+\index{util@{util}!yaw@{yaw}}
+\index{yaw@{yaw}!util@{util}}
+\doxysubsubsection{\texorpdfstring{yaw}{yaw}}
+{\footnotesize\ttfamily int util.\+yaw = 0}
+
