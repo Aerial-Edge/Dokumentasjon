@@ -1,0 +1,96 @@
+\hypertarget{classcamera__capture_1_1_camera_capture}{}\doxysection{camera\+\_\+capture.\+Camera\+Capture Class Reference}
+\label{classcamera__capture_1_1_camera_capture}\index{camera\_capture.CameraCapture@{camera\_capture.CameraCapture}}
+
+
+A class to capture frames from a camera and publish them as ROS messages.  
+
+
+Inheritance diagram for camera\+\_\+capture.\+Camera\+Capture\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcamera__capture_1_1_camera_capture}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classcamera__capture_1_1_camera_capture_a78dee6ee925ea446c21da12ac511ea03}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self)
+\begin{DoxyCompactList}\small\item\em Initializes Camera\+Capture with a publisher, timer, video capture, and bridge. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classcamera__capture_1_1_camera_capture_a089a6b819571d7db204bd36be6fbe829}{publish\+\_\+image\+\_\+data}} (self)
+\begin{DoxyCompactList}\small\item\em Publishes image data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classcamera__capture_1_1_camera_capture_ad70820fea8e165f5fbd738fb75964533}{publisher\+\_\+}}
+\item 
+\mbox{\hyperlink{classcamera__capture_1_1_camera_capture_a12bd31e61eb83d138a5768c07bfcec0f}{timer}}
+\item 
+\mbox{\hyperlink{classcamera__capture_1_1_camera_capture_ad148231c38bc5c981d3d5ab58ac4702e}{opencv\+\_\+video}}
+\item 
+\mbox{\hyperlink{classcamera__capture_1_1_camera_capture_a8e9a2dcc9400239830c75bb4b5da9305}{bridge}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class to capture frames from a camera and publish them as ROS messages. 
+
+This class is a Node in ROS that uses the Picamera2 library for capturing video data, and Cv\+Bridge for converting between ROS and Open\+CV image formats. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classcamera__capture_1_1_camera_capture_a78dee6ee925ea446c21da12ac511ea03}\label{classcamera__capture_1_1_camera_capture_a78dee6ee925ea446c21da12ac511ea03}} 
+\index{camera\_capture.CameraCapture@{camera\_capture.CameraCapture}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!camera\_capture.CameraCapture@{camera\_capture.CameraCapture}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def camera\+\_\+capture.\+Camera\+Capture.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Initializes Camera\+Capture with a publisher, timer, video capture, and bridge. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classcamera__capture_1_1_camera_capture_a089a6b819571d7db204bd36be6fbe829}\label{classcamera__capture_1_1_camera_capture_a089a6b819571d7db204bd36be6fbe829}} 
+\index{camera\_capture.CameraCapture@{camera\_capture.CameraCapture}!publish\_image\_data@{publish\_image\_data}}
+\index{publish\_image\_data@{publish\_image\_data}!camera\_capture.CameraCapture@{camera\_capture.CameraCapture}}
+\doxysubsubsection{\texorpdfstring{publish\_image\_data()}{publish\_image\_data()}}
+{\footnotesize\ttfamily def camera\+\_\+capture.\+Camera\+Capture.\+publish\+\_\+image\+\_\+data (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Publishes image data. 
+
+\begin{DoxyVerb}   Captures a frame from the video capture device, converts the image to a ROS message, and publishes the message.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classcamera__capture_1_1_camera_capture_a8e9a2dcc9400239830c75bb4b5da9305}\label{classcamera__capture_1_1_camera_capture_a8e9a2dcc9400239830c75bb4b5da9305}} 
+\index{camera\_capture.CameraCapture@{camera\_capture.CameraCapture}!bridge@{bridge}}
+\index{bridge@{bridge}!camera\_capture.CameraCapture@{camera\_capture.CameraCapture}}
+\doxysubsubsection{\texorpdfstring{bridge}{bridge}}
+{\footnotesize\ttfamily camera\+\_\+capture.\+Camera\+Capture.\+bridge}
+
+\mbox{\Hypertarget{classcamera__capture_1_1_camera_capture_ad148231c38bc5c981d3d5ab58ac4702e}\label{classcamera__capture_1_1_camera_capture_ad148231c38bc5c981d3d5ab58ac4702e}} 
+\index{camera\_capture.CameraCapture@{camera\_capture.CameraCapture}!opencv\_video@{opencv\_video}}
+\index{opencv\_video@{opencv\_video}!camera\_capture.CameraCapture@{camera\_capture.CameraCapture}}
+\doxysubsubsection{\texorpdfstring{opencv\_video}{opencv\_video}}
+{\footnotesize\ttfamily camera\+\_\+capture.\+Camera\+Capture.\+opencv\+\_\+video}
+
+\mbox{\Hypertarget{classcamera__capture_1_1_camera_capture_ad70820fea8e165f5fbd738fb75964533}\label{classcamera__capture_1_1_camera_capture_ad70820fea8e165f5fbd738fb75964533}} 
+\index{camera\_capture.CameraCapture@{camera\_capture.CameraCapture}!publisher\_@{publisher\_}}
+\index{publisher\_@{publisher\_}!camera\_capture.CameraCapture@{camera\_capture.CameraCapture}}
+\doxysubsubsection{\texorpdfstring{publisher\_}{publisher\_}}
+{\footnotesize\ttfamily camera\+\_\+capture.\+Camera\+Capture.\+publisher\+\_\+}
+
+\mbox{\Hypertarget{classcamera__capture_1_1_camera_capture_a12bd31e61eb83d138a5768c07bfcec0f}\label{classcamera__capture_1_1_camera_capture_a12bd31e61eb83d138a5768c07bfcec0f}} 
+\index{camera\_capture.CameraCapture@{camera\_capture.CameraCapture}!timer@{timer}}
+\index{timer@{timer}!camera\_capture.CameraCapture@{camera\_capture.CameraCapture}}
+\doxysubsubsection{\texorpdfstring{timer}{timer}}
+{\footnotesize\ttfamily camera\+\_\+capture.\+Camera\+Capture.\+timer}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{camera__capture_8py}{camera\+\_\+capture.\+py}}\end{DoxyCompactItemize}
