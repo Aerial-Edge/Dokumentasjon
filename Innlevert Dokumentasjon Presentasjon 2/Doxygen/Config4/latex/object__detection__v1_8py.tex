@@ -1,0 +1,57 @@
+\hypertarget{object__detection__v1_8py}{}\doxysection{object\+\_\+detection\+\_\+v1.\+py File Reference}
+\label{object__detection__v1_8py}\index{object\_detection\_v1.py@{object\_detection\_v1.py}}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceobject__detection__v1}{object\+\_\+detection\+\_\+v1}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespaceobject__detection__v1_ac601c6fb0bb41e4ffecd3375016f4d06}{object\+\_\+detection\+\_\+v1.\+calculate\+Distance}} (ball\+Radius\+\_\+px)
+\begin{DoxyCompactList}\small\item\em Calculate the distance from the camera to the object based on its radius in pixels. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespaceobject__detection__v1_a689f491b27c62189027eccf46390c97e}{object\+\_\+detection\+\_\+v1.\+detect\+\_\+colored\+\_\+object}} (color\+Lower, color\+Upper, min\+\_\+radius, max\+\_\+radius)
+\begin{DoxyCompactList}\small\item\em Detect a colored object within a given color range and size. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespaceobject__detection__v1_a315b66d25a9584f33f443d9770c98912}{object\+\_\+detection\+\_\+v1.\+display\+\_\+object\+\_\+info}} (frame, x, y, radius, distance, color, text\+\_\+offset)
+\begin{DoxyCompactList}\small\item\em Display information about the detected object on the frame. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+Users \mbox{\hyperlink{namespaceobject__detection__v1_a43182053526a66e36aa7d3056ae23d5f}{object\+\_\+detection\+\_\+v1.\+C}} \+:\textbackslash{}Users\textbackslash{}sin\+\_\+p\textbackslash{}\+One\+Drive -\/ USN\textbackslash{}\+Dokumenter\textbackslash{}\+Bachelor\textbackslash{}\+Doxygen\textbackslash{}\+Dokumentasjon\textbackslash{}\+Doxygen\textbackslash{}\+Config4$>$doxypypy -\/a -\/c \char`\"{}C\+:/Users/sin\+\_\+p/One\+Drive -\/ USN/Dokumenter/Bachelor/Doxygen/Dokumentasjon/Doxygen/Config4/object\+\_\+detection\+\_\+v1.\+py\char`\"{}
+\item 
+float \mbox{\hyperlink{namespaceobject__detection__v1_a5746fc57784bc86c1ce5d91e5bc13038}{object\+\_\+detection\+\_\+v1.\+ball\+Radius}} = 3.\+25
+\item 
+float \mbox{\hyperlink{namespaceobject__detection__v1_a9bcc358539c56e1c44c15b0c717b1afe}{object\+\_\+detection\+\_\+v1.\+camera\+FOV}} = 62.\+2
+\item 
+tuple \mbox{\hyperlink{namespaceobject__detection__v1_a9eeac58748fc4b5ab4621a1d266a1c5c}{object\+\_\+detection\+\_\+v1.\+faktor}} = (1280 / 2) $\ast$ (ball\+Radius / math.\+tan(math.\+radians(camera\+FOV / 2)))
+\item 
+dict \mbox{\hyperlink{namespaceobject__detection__v1_af945675767d42885f312f0fcec6b3c62}{object\+\_\+detection\+\_\+v1.\+colors}}
+\item 
+FPS \mbox{\hyperlink{namespaceobject__detection__v1_aba7ae0e2b68272dbbec57b8b2138791d}{object\+\_\+detection\+\_\+v1.\+fpsreader}} = FPS()
+\item 
+cv \mbox{\hyperlink{namespaceobject__detection__v1_a2d3084502c0c973084440857d7073045}{object\+\_\+detection\+\_\+v1.\+video\+Cap}} = cv.\+Video\+Capture(0)
+\item 
+\mbox{\hyperlink{namespaceobject__detection__v1_ab886ca9e0556edfd3b863cb63ec9cb79}{object\+\_\+detection\+\_\+v1.\+grabbed}}
+\item 
+\mbox{\hyperlink{namespaceobject__detection__v1_a7ddfc9d4bd69b4f39da38625f536780b}{object\+\_\+detection\+\_\+v1.\+frame}} = imutils.\+resize(frame, width=1280)
+\item 
+\mbox{\hyperlink{namespaceobject__detection__v1_aba421f6686bf61eac7e7f230ce476061}{object\+\_\+detection\+\_\+v1.\+fps}}
+\item 
+\mbox{\hyperlink{namespaceobject__detection__v1_ab9a225570c92d09d78f117b8c645a9ed}{object\+\_\+detection\+\_\+v1.\+img}}
+\item 
+\mbox{\hyperlink{namespaceobject__detection__v1_ad28499ef37d2a07325f04cda0f81e36c}{object\+\_\+detection\+\_\+v1.\+color}}
+\item 
+cv \mbox{\hyperlink{namespaceobject__detection__v1_a7a3e386378aa9a5da999eda55e839bb8}{object\+\_\+detection\+\_\+v1.\+hsv}} = cv.\+cvt\+Color(frame, cv.\+COLOR\+\_\+\+BGR2\+HSV)
+\item 
+def \mbox{\hyperlink{namespaceobject__detection__v1_a408fdb8b5e1d4dcd0d2c38681ecadea7}{object\+\_\+detection\+\_\+v1.\+obj}}
+\item 
+\mbox{\hyperlink{namespaceobject__detection__v1_ad4e1b5e75ee2afc8b69849321b37cb96}{object\+\_\+detection\+\_\+v1.\+x}}
+\item 
+\mbox{\hyperlink{namespaceobject__detection__v1_aecf7b0f1b56476bcb156d27e2b93cd41}{object\+\_\+detection\+\_\+v1.\+y}}
+\item 
+\mbox{\hyperlink{namespaceobject__detection__v1_a6aabe0e4ae83e4db46acda58c231b528}{object\+\_\+detection\+\_\+v1.\+ball\+Radius\+\_\+px}}
+\item 
+def \mbox{\hyperlink{namespaceobject__detection__v1_a72e8c9b7cb88759cfd5e0c70e3869649}{object\+\_\+detection\+\_\+v1.\+distance}} = calculate\+Distance(ball\+Radius\+\_\+px)
+\item 
+cv \mbox{\hyperlink{namespaceobject__detection__v1_ac326df9f5954e80d279e9981f3546b7a}{object\+\_\+detection\+\_\+v1.\+key}} = cv.\+wait\+Key(1)
+\end{DoxyCompactItemize}

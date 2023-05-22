@@ -1,0 +1,277 @@
+\hypertarget{namespaceobject__detection__v1}{}\doxysection{object\+\_\+detection\+\_\+v1 Namespace Reference}
+\label{namespaceobject__detection__v1}\index{object\_detection\_v1@{object\_detection\_v1}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespaceobject__detection__v1_ac601c6fb0bb41e4ffecd3375016f4d06}{calculate\+Distance}} (\mbox{\hyperlink{namespaceobject__detection__v1_a6aabe0e4ae83e4db46acda58c231b528}{ball\+Radius\+\_\+px}})
+\begin{DoxyCompactList}\small\item\em Calculate the distance from the camera to the object based on its radius in pixels. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespaceobject__detection__v1_a689f491b27c62189027eccf46390c97e}{detect\+\_\+colored\+\_\+object}} (color\+Lower, color\+Upper, min\+\_\+radius, max\+\_\+radius)
+\begin{DoxyCompactList}\small\item\em Detect a colored object within a given color range and size. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespaceobject__detection__v1_a315b66d25a9584f33f443d9770c98912}{display\+\_\+object\+\_\+info}} (\mbox{\hyperlink{namespaceobject__detection__v1_a7ddfc9d4bd69b4f39da38625f536780b}{frame}}, \mbox{\hyperlink{namespaceobject__detection__v1_ad4e1b5e75ee2afc8b69849321b37cb96}{x}}, \mbox{\hyperlink{namespaceobject__detection__v1_aecf7b0f1b56476bcb156d27e2b93cd41}{y}}, radius, \mbox{\hyperlink{namespaceobject__detection__v1_a72e8c9b7cb88759cfd5e0c70e3869649}{distance}}, \mbox{\hyperlink{namespaceobject__detection__v1_ad28499ef37d2a07325f04cda0f81e36c}{color}}, text\+\_\+offset)
+\begin{DoxyCompactList}\small\item\em Display information about the detected object on the frame. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+Users \mbox{\hyperlink{namespaceobject__detection__v1_a43182053526a66e36aa7d3056ae23d5f}{C}} \+:\textbackslash{}Users\textbackslash{}sin\+\_\+p\textbackslash{}\+One\+Drive -\/ USN\textbackslash{}\+Dokumenter\textbackslash{}\+Bachelor\textbackslash{}\+Doxygen\textbackslash{}\+Dokumentasjon\textbackslash{}\+Doxygen\textbackslash{}\+Config4$>$doxypypy -\/a -\/c \char`\"{}C\+:/Users/sin\+\_\+p/One\+Drive -\/ USN/Dokumenter/Bachelor/Doxygen/Dokumentasjon/Doxygen/Config4/object\+\_\+detection\+\_\+v1.\+py\char`\"{}
+\item 
+float \mbox{\hyperlink{namespaceobject__detection__v1_a5746fc57784bc86c1ce5d91e5bc13038}{ball\+Radius}} = 3.\+25
+\item 
+float \mbox{\hyperlink{namespaceobject__detection__v1_a9bcc358539c56e1c44c15b0c717b1afe}{camera\+FOV}} = 62.\+2
+\item 
+tuple \mbox{\hyperlink{namespaceobject__detection__v1_a9eeac58748fc4b5ab4621a1d266a1c5c}{faktor}} = (1280 / 2) $\ast$ (\mbox{\hyperlink{namespaceobject__detection__v1_a5746fc57784bc86c1ce5d91e5bc13038}{ball\+Radius}} / math.\+tan(math.\+radians(\mbox{\hyperlink{namespaceobject__detection__v1_a9bcc358539c56e1c44c15b0c717b1afe}{camera\+FOV}} / 2)))
+\item 
+dict \mbox{\hyperlink{namespaceobject__detection__v1_af945675767d42885f312f0fcec6b3c62}{colors}}
+\item 
+FPS \mbox{\hyperlink{namespaceobject__detection__v1_aba7ae0e2b68272dbbec57b8b2138791d}{fpsreader}} = FPS()
+\item 
+cv \mbox{\hyperlink{namespaceobject__detection__v1_a2d3084502c0c973084440857d7073045}{video\+Cap}} = cv.\+Video\+Capture(0)
+\item 
+\mbox{\hyperlink{namespaceobject__detection__v1_ab886ca9e0556edfd3b863cb63ec9cb79}{grabbed}}
+\item 
+\mbox{\hyperlink{namespaceobject__detection__v1_a7ddfc9d4bd69b4f39da38625f536780b}{frame}} = imutils.\+resize(frame, width=1280)
+\item 
+\mbox{\hyperlink{namespaceobject__detection__v1_aba421f6686bf61eac7e7f230ce476061}{fps}}
+\item 
+\mbox{\hyperlink{namespaceobject__detection__v1_ab9a225570c92d09d78f117b8c645a9ed}{img}}
+\item 
+\mbox{\hyperlink{namespaceobject__detection__v1_ad28499ef37d2a07325f04cda0f81e36c}{color}}
+\item 
+cv \mbox{\hyperlink{namespaceobject__detection__v1_a7a3e386378aa9a5da999eda55e839bb8}{hsv}} = cv.\+cvt\+Color(\mbox{\hyperlink{namespaceobject__detection__v1_a7ddfc9d4bd69b4f39da38625f536780b}{frame}}, cv.\+COLOR\+\_\+\+BGR2\+HSV)
+\item 
+def \mbox{\hyperlink{namespaceobject__detection__v1_a408fdb8b5e1d4dcd0d2c38681ecadea7}{obj}}
+\item 
+\mbox{\hyperlink{namespaceobject__detection__v1_ad4e1b5e75ee2afc8b69849321b37cb96}{x}}
+\item 
+\mbox{\hyperlink{namespaceobject__detection__v1_aecf7b0f1b56476bcb156d27e2b93cd41}{y}}
+\item 
+\mbox{\hyperlink{namespaceobject__detection__v1_a6aabe0e4ae83e4db46acda58c231b528}{ball\+Radius\+\_\+px}}
+\item 
+def \mbox{\hyperlink{namespaceobject__detection__v1_a72e8c9b7cb88759cfd5e0c70e3869649}{distance}} = \mbox{\hyperlink{namespaceobject__detection__v1_ac601c6fb0bb41e4ffecd3375016f4d06}{calculate\+Distance}}(\mbox{\hyperlink{namespaceobject__detection__v1_a6aabe0e4ae83e4db46acda58c231b528}{ball\+Radius\+\_\+px}})
+\item 
+cv \mbox{\hyperlink{namespaceobject__detection__v1_ac326df9f5954e80d279e9981f3546b7a}{key}} = cv.\+wait\+Key(1)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespaceobject__detection__v1_ac601c6fb0bb41e4ffecd3375016f4d06}\label{namespaceobject__detection__v1_ac601c6fb0bb41e4ffecd3375016f4d06}} 
+\index{object\_detection\_v1@{object\_detection\_v1}!calculateDistance@{calculateDistance}}
+\index{calculateDistance@{calculateDistance}!object\_detection\_v1@{object\_detection\_v1}}
+\doxysubsubsection{\texorpdfstring{calculateDistance()}{calculateDistance()}}
+{\footnotesize\ttfamily def object\+\_\+detection\+\_\+v1.\+calculate\+Distance (\begin{DoxyParamCaption}\item[{}]{ball\+Radius\+\_\+px }\end{DoxyParamCaption})}
+
+
+
+Calculate the distance from the camera to the object based on its radius in pixels. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ball\+Radius\+\_\+px} & The radius of the ball in pixels.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The calculated distance in cm. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespaceobject__detection__v1_a689f491b27c62189027eccf46390c97e}\label{namespaceobject__detection__v1_a689f491b27c62189027eccf46390c97e}} 
+\index{object\_detection\_v1@{object\_detection\_v1}!detect\_colored\_object@{detect\_colored\_object}}
+\index{detect\_colored\_object@{detect\_colored\_object}!object\_detection\_v1@{object\_detection\_v1}}
+\doxysubsubsection{\texorpdfstring{detect\_colored\_object()}{detect\_colored\_object()}}
+{\footnotesize\ttfamily def object\+\_\+detection\+\_\+v1.\+detect\+\_\+colored\+\_\+object (\begin{DoxyParamCaption}\item[{}]{color\+Lower,  }\item[{}]{color\+Upper,  }\item[{}]{min\+\_\+radius,  }\item[{}]{max\+\_\+radius }\end{DoxyParamCaption})}
+
+
+
+Detect a colored object within a given color range and size. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em color\+Lower} & The lower boundary of the color range in HSV format. \\
+\hline
+{\em color\+Upper} & The upper boundary of the color range in HSV format. \\
+\hline
+{\em min\+\_\+radius} & The minimum radius of the object to detect. \\
+\hline
+{\em max\+\_\+radius} & The maximum radius of the object to detect.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The (x, y) coordinates and radius of the detected object, or None if no object is detected. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespaceobject__detection__v1_a315b66d25a9584f33f443d9770c98912}\label{namespaceobject__detection__v1_a315b66d25a9584f33f443d9770c98912}} 
+\index{object\_detection\_v1@{object\_detection\_v1}!display\_object\_info@{display\_object\_info}}
+\index{display\_object\_info@{display\_object\_info}!object\_detection\_v1@{object\_detection\_v1}}
+\doxysubsubsection{\texorpdfstring{display\_object\_info()}{display\_object\_info()}}
+{\footnotesize\ttfamily def object\+\_\+detection\+\_\+v1.\+display\+\_\+object\+\_\+info (\begin{DoxyParamCaption}\item[{}]{frame,  }\item[{}]{x,  }\item[{}]{y,  }\item[{}]{radius,  }\item[{}]{distance,  }\item[{}]{color,  }\item[{}]{text\+\_\+offset }\end{DoxyParamCaption})}
+
+
+
+Display information about the detected object on the frame. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em frame} & The frame on which to display the information. \\
+\hline
+{\em x} & The x-\/coordinate of the object. \\
+\hline
+{\em y} & The y-\/coordinate of the object. \\
+\hline
+{\em radius} & The radius of the object. \\
+\hline
+{\em distance} & The distance to the object. \\
+\hline
+{\em color} & The color of the circle to be drawn around the object. \\
+\hline
+{\em text\+\_\+offset} & The offset of the distance text under the FPS indicator. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespaceobject__detection__v1_a5746fc57784bc86c1ce5d91e5bc13038}\label{namespaceobject__detection__v1_a5746fc57784bc86c1ce5d91e5bc13038}} 
+\index{object\_detection\_v1@{object\_detection\_v1}!ballRadius@{ballRadius}}
+\index{ballRadius@{ballRadius}!object\_detection\_v1@{object\_detection\_v1}}
+\doxysubsubsection{\texorpdfstring{ballRadius}{ballRadius}}
+{\footnotesize\ttfamily float object\+\_\+detection\+\_\+v1.\+ball\+Radius = 3.\+25}
+
+\mbox{\Hypertarget{namespaceobject__detection__v1_a6aabe0e4ae83e4db46acda58c231b528}\label{namespaceobject__detection__v1_a6aabe0e4ae83e4db46acda58c231b528}} 
+\index{object\_detection\_v1@{object\_detection\_v1}!ballRadius\_px@{ballRadius\_px}}
+\index{ballRadius\_px@{ballRadius\_px}!object\_detection\_v1@{object\_detection\_v1}}
+\doxysubsubsection{\texorpdfstring{ballRadius\_px}{ballRadius\_px}}
+{\footnotesize\ttfamily object\+\_\+detection\+\_\+v1.\+ball\+Radius\+\_\+px}
+
+\mbox{\Hypertarget{namespaceobject__detection__v1_a43182053526a66e36aa7d3056ae23d5f}\label{namespaceobject__detection__v1_a43182053526a66e36aa7d3056ae23d5f}} 
+\index{object\_detection\_v1@{object\_detection\_v1}!C@{C}}
+\index{C@{C}!object\_detection\_v1@{object\_detection\_v1}}
+\doxysubsubsection{\texorpdfstring{C}{C}}
+{\footnotesize\ttfamily Users object\+\_\+detection\+\_\+v1.\+C \+:\textbackslash{}Users\textbackslash{}sin\+\_\+p\textbackslash{}\+One\+Drive -\/ USN\textbackslash{}\+Dokumenter\textbackslash{}\+Bachelor\textbackslash{}\+Doxygen\textbackslash{}\+Dokumentasjon\textbackslash{}\+Doxygen\textbackslash{}\+Config4$>$doxypypy -\/a -\/c \char`\"{}C\+:/Users/sin\+\_\+p/One\+Drive -\/ USN/Dokumenter/Bachelor/Doxygen/Dokumentasjon/Doxygen/Config4/object\+\_\+detection\+\_\+v1.\+py\char`\"{}}
+
+\mbox{\Hypertarget{namespaceobject__detection__v1_a9bcc358539c56e1c44c15b0c717b1afe}\label{namespaceobject__detection__v1_a9bcc358539c56e1c44c15b0c717b1afe}} 
+\index{object\_detection\_v1@{object\_detection\_v1}!cameraFOV@{cameraFOV}}
+\index{cameraFOV@{cameraFOV}!object\_detection\_v1@{object\_detection\_v1}}
+\doxysubsubsection{\texorpdfstring{cameraFOV}{cameraFOV}}
+{\footnotesize\ttfamily float object\+\_\+detection\+\_\+v1.\+camera\+FOV = 62.\+2}
+
+\mbox{\Hypertarget{namespaceobject__detection__v1_ad28499ef37d2a07325f04cda0f81e36c}\label{namespaceobject__detection__v1_ad28499ef37d2a07325f04cda0f81e36c}} 
+\index{object\_detection\_v1@{object\_detection\_v1}!color@{color}}
+\index{color@{color}!object\_detection\_v1@{object\_detection\_v1}}
+\doxysubsubsection{\texorpdfstring{color}{color}}
+{\footnotesize\ttfamily object\+\_\+detection\+\_\+v1.\+color}
+
+\mbox{\Hypertarget{namespaceobject__detection__v1_af945675767d42885f312f0fcec6b3c62}\label{namespaceobject__detection__v1_af945675767d42885f312f0fcec6b3c62}} 
+\index{object\_detection\_v1@{object\_detection\_v1}!colors@{colors}}
+\index{colors@{colors}!object\_detection\_v1@{object\_detection\_v1}}
+\doxysubsubsection{\texorpdfstring{colors}{colors}}
+{\footnotesize\ttfamily dict object\+\_\+detection\+\_\+v1.\+colors}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ \{}
+\DoxyCodeLine{00002\ \ \ \ \ \textcolor{stringliteral}{'green'}:\ \{\ \ \ \textcolor{comment}{\#\ "{}GRØNN"{}\ in\ Norwegian}}
+\DoxyCodeLine{00003\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'lower'}:\ (72,\ 70,\ 32),\ \textcolor{comment}{\#(L-\/H,\ L-\/S,\ L-\/V)}}
+\DoxyCodeLine{00004\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'upper'}:\ (99,\ 244,\ 107),\ \textcolor{comment}{\#(U-\/H,\ \ U-\/S,\ U-\/V)}}
+\DoxyCodeLine{00005\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'min\_radius'}:\ 0,\ \textcolor{comment}{\#\ ex\ between\ 20}}
+\DoxyCodeLine{00006\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'max\_radius'}:\ 0,\ \textcolor{comment}{\#\ to\ 60\ pixels}}
+\DoxyCodeLine{00007\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'color'}:\ (0,\ 255,\ 0),\ \textcolor{comment}{\#\ Color\ of\ the\ circle\ around\ object}}
+\DoxyCodeLine{00008\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'text\_offset'}:\ 0,\ \textcolor{comment}{\#\ Distance\ text\ position\ under\ FPS}}
+\DoxyCodeLine{00009\ \ \ \ \ \},}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{stringliteral}{'orange'}:\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'lower'}:\ (0,\ 115,\ 99),\ \textcolor{comment}{\#(L-\/H,\ L-\/S,\ L-\/V)}}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'upper'}:\ (18,\ 255,\ 255),\ \textcolor{comment}{\#(U-\/H,\ \ U-\/S,\ U-\/V)}}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'min\_radius'}:\ 0,}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'max\_radius'}:\ 0,}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'color'}:\ (0,\ 102,\ 255),\ \textcolor{comment}{\#\ Color\ of\ the\ circle\ around\ object}}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'text\_offset'}:\ 20,\ \textcolor{comment}{\#\ Distance\ text\ position\ under\ FPS}}
+\DoxyCodeLine{00017\ \ \ \ \ \},}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{stringliteral}{'red'}:\ \{\ \ \textcolor{comment}{\#\ "{}VINRØD"{}\ in\ Norwegian,\ which\ means\ deep\ red\ or\ wine\ red}}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'lower'}:\ (119,\ 37,\ 0),\ \textcolor{comment}{\#(L-\/H,\ L-\/S,\ L-\/V)}}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'upper'}:\ (179,\ 179,\ 147),\ \textcolor{comment}{\#(U-\/H,\ \ U-\/S,\ U-\/V)}}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'min\_radius'}:\ 0,}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'max\_radius'}:\ 0,}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'color'}:\ (0,\ 0,\ 255),\ \textcolor{comment}{\#\ Color\ of\ the\ circle\ around\ object}}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'text\_offset'}:\ 40,\ \ \textcolor{comment}{\#\ Distance\ text\ position\ under\ FPS}}
+\DoxyCodeLine{00025\ \ \ \ \ \},}
+\DoxyCodeLine{00026\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceobject__detection__v1_a72e8c9b7cb88759cfd5e0c70e3869649}\label{namespaceobject__detection__v1_a72e8c9b7cb88759cfd5e0c70e3869649}} 
+\index{object\_detection\_v1@{object\_detection\_v1}!distance@{distance}}
+\index{distance@{distance}!object\_detection\_v1@{object\_detection\_v1}}
+\doxysubsubsection{\texorpdfstring{distance}{distance}}
+{\footnotesize\ttfamily def object\+\_\+detection\+\_\+v1.\+distance = \mbox{\hyperlink{namespaceobject__detection__v1_ac601c6fb0bb41e4ffecd3375016f4d06}{calculate\+Distance}}(\mbox{\hyperlink{namespaceobject__detection__v1_a6aabe0e4ae83e4db46acda58c231b528}{ball\+Radius\+\_\+px}})}
+
+\mbox{\Hypertarget{namespaceobject__detection__v1_a9eeac58748fc4b5ab4621a1d266a1c5c}\label{namespaceobject__detection__v1_a9eeac58748fc4b5ab4621a1d266a1c5c}} 
+\index{object\_detection\_v1@{object\_detection\_v1}!faktor@{faktor}}
+\index{faktor@{faktor}!object\_detection\_v1@{object\_detection\_v1}}
+\doxysubsubsection{\texorpdfstring{faktor}{faktor}}
+{\footnotesize\ttfamily tuple object\+\_\+detection\+\_\+v1.\+faktor = (1280 / 2) $\ast$ (\mbox{\hyperlink{namespaceobject__detection__v1_a5746fc57784bc86c1ce5d91e5bc13038}{ball\+Radius}} / math.\+tan(math.\+radians(\mbox{\hyperlink{namespaceobject__detection__v1_a9bcc358539c56e1c44c15b0c717b1afe}{camera\+FOV}} / 2)))}
+
+\mbox{\Hypertarget{namespaceobject__detection__v1_aba421f6686bf61eac7e7f230ce476061}\label{namespaceobject__detection__v1_aba421f6686bf61eac7e7f230ce476061}} 
+\index{object\_detection\_v1@{object\_detection\_v1}!fps@{fps}}
+\index{fps@{fps}!object\_detection\_v1@{object\_detection\_v1}}
+\doxysubsubsection{\texorpdfstring{fps}{fps}}
+{\footnotesize\ttfamily object\+\_\+detection\+\_\+v1.\+fps}
+
+\mbox{\Hypertarget{namespaceobject__detection__v1_aba7ae0e2b68272dbbec57b8b2138791d}\label{namespaceobject__detection__v1_aba7ae0e2b68272dbbec57b8b2138791d}} 
+\index{object\_detection\_v1@{object\_detection\_v1}!fpsreader@{fpsreader}}
+\index{fpsreader@{fpsreader}!object\_detection\_v1@{object\_detection\_v1}}
+\doxysubsubsection{\texorpdfstring{fpsreader}{fpsreader}}
+{\footnotesize\ttfamily FPS object\+\_\+detection\+\_\+v1.\+fpsreader = FPS()}
+
+\mbox{\Hypertarget{namespaceobject__detection__v1_a7ddfc9d4bd69b4f39da38625f536780b}\label{namespaceobject__detection__v1_a7ddfc9d4bd69b4f39da38625f536780b}} 
+\index{object\_detection\_v1@{object\_detection\_v1}!frame@{frame}}
+\index{frame@{frame}!object\_detection\_v1@{object\_detection\_v1}}
+\doxysubsubsection{\texorpdfstring{frame}{frame}}
+{\footnotesize\ttfamily imutils object\+\_\+detection\+\_\+v1.\+frame = imutils.\+resize(frame, width=1280)}
+
+\mbox{\Hypertarget{namespaceobject__detection__v1_ab886ca9e0556edfd3b863cb63ec9cb79}\label{namespaceobject__detection__v1_ab886ca9e0556edfd3b863cb63ec9cb79}} 
+\index{object\_detection\_v1@{object\_detection\_v1}!grabbed@{grabbed}}
+\index{grabbed@{grabbed}!object\_detection\_v1@{object\_detection\_v1}}
+\doxysubsubsection{\texorpdfstring{grabbed}{grabbed}}
+{\footnotesize\ttfamily object\+\_\+detection\+\_\+v1.\+grabbed}
+
+\mbox{\Hypertarget{namespaceobject__detection__v1_a7a3e386378aa9a5da999eda55e839bb8}\label{namespaceobject__detection__v1_a7a3e386378aa9a5da999eda55e839bb8}} 
+\index{object\_detection\_v1@{object\_detection\_v1}!hsv@{hsv}}
+\index{hsv@{hsv}!object\_detection\_v1@{object\_detection\_v1}}
+\doxysubsubsection{\texorpdfstring{hsv}{hsv}}
+{\footnotesize\ttfamily cv object\+\_\+detection\+\_\+v1.\+hsv = cv.\+cvt\+Color(\mbox{\hyperlink{namespaceobject__detection__v1_a7ddfc9d4bd69b4f39da38625f536780b}{frame}}, cv.\+COLOR\+\_\+\+BGR2\+HSV)}
+
+\mbox{\Hypertarget{namespaceobject__detection__v1_ab9a225570c92d09d78f117b8c645a9ed}\label{namespaceobject__detection__v1_ab9a225570c92d09d78f117b8c645a9ed}} 
+\index{object\_detection\_v1@{object\_detection\_v1}!img@{img}}
+\index{img@{img}!object\_detection\_v1@{object\_detection\_v1}}
+\doxysubsubsection{\texorpdfstring{img}{img}}
+{\footnotesize\ttfamily object\+\_\+detection\+\_\+v1.\+img}
+
+\mbox{\Hypertarget{namespaceobject__detection__v1_ac326df9f5954e80d279e9981f3546b7a}\label{namespaceobject__detection__v1_ac326df9f5954e80d279e9981f3546b7a}} 
+\index{object\_detection\_v1@{object\_detection\_v1}!key@{key}}
+\index{key@{key}!object\_detection\_v1@{object\_detection\_v1}}
+\doxysubsubsection{\texorpdfstring{key}{key}}
+{\footnotesize\ttfamily cv object\+\_\+detection\+\_\+v1.\+key = cv.\+wait\+Key(1)}
+
+\mbox{\Hypertarget{namespaceobject__detection__v1_a408fdb8b5e1d4dcd0d2c38681ecadea7}\label{namespaceobject__detection__v1_a408fdb8b5e1d4dcd0d2c38681ecadea7}} 
+\index{object\_detection\_v1@{object\_detection\_v1}!obj@{obj}}
+\index{obj@{obj}!object\_detection\_v1@{object\_detection\_v1}}
+\doxysubsubsection{\texorpdfstring{obj}{obj}}
+{\footnotesize\ttfamily def object\+\_\+detection\+\_\+v1.\+obj}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ detect\_colored\_object(color\_info[\textcolor{stringliteral}{'lower'}],\ color\_info[\textcolor{stringliteral}{'upper'}],\ color\_info[\textcolor{stringliteral}{'min\_radius'}],}
+\DoxyCodeLine{00002\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ color\_info[\textcolor{stringliteral}{'max\_radius'}])}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceobject__detection__v1_a2d3084502c0c973084440857d7073045}\label{namespaceobject__detection__v1_a2d3084502c0c973084440857d7073045}} 
+\index{object\_detection\_v1@{object\_detection\_v1}!videoCap@{videoCap}}
+\index{videoCap@{videoCap}!object\_detection\_v1@{object\_detection\_v1}}
+\doxysubsubsection{\texorpdfstring{videoCap}{videoCap}}
+{\footnotesize\ttfamily cv object\+\_\+detection\+\_\+v1.\+video\+Cap = cv.\+Video\+Capture(0)}
+
+\mbox{\Hypertarget{namespaceobject__detection__v1_ad4e1b5e75ee2afc8b69849321b37cb96}\label{namespaceobject__detection__v1_ad4e1b5e75ee2afc8b69849321b37cb96}} 
+\index{object\_detection\_v1@{object\_detection\_v1}!x@{x}}
+\index{x@{x}!object\_detection\_v1@{object\_detection\_v1}}
+\doxysubsubsection{\texorpdfstring{x}{x}}
+{\footnotesize\ttfamily object\+\_\+detection\+\_\+v1.\+x}
+
+\mbox{\Hypertarget{namespaceobject__detection__v1_aecf7b0f1b56476bcb156d27e2b93cd41}\label{namespaceobject__detection__v1_aecf7b0f1b56476bcb156d27e2b93cd41}} 
+\index{object\_detection\_v1@{object\_detection\_v1}!y@{y}}
+\index{y@{y}!object\_detection\_v1@{object\_detection\_v1}}
+\doxysubsubsection{\texorpdfstring{y}{y}}
+{\footnotesize\ttfamily object\+\_\+detection\+\_\+v1.\+y}
+

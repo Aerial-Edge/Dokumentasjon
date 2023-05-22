@@ -1,0 +1,206 @@
+\hypertarget{classqtm__node_1_1_qualisys__node}{}\doxysection{qtm\+\_\+node.\+Qualisys\+\_\+node Class Reference}
+\label{classqtm__node_1_1_qualisys__node}\index{qtm\_node.Qualisys\_node@{qtm\_node.Qualisys\_node}}
+Inheritance diagram for qtm\+\_\+node.\+Qualisys\+\_\+node\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classqtm__node_1_1_qualisys__node}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classqtm__node_1_1_qualisys__node_a3ef8cfe3917abb0f9174b720d62ea55c}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self)
+\begin{DoxyCompactList}\small\item\em Initializer for the Qualisys\+\_\+node class. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classqtm__node_1_1_qualisys__node_aeede304a22f80fd9358a2420eb5f821d}{talker}} (self, \mbox{\hyperlink{namespaceqtm__node_aa594335a6c7ed7ef0841e80ce5d2297d}{data}})
+\begin{DoxyCompactList}\small\item\em Function for publishing data to the \textquotesingle{}drone\+\_\+pose\textquotesingle{} topic. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classqtm__node_1_1_qualisys__node_adf0dff08e9519ac880a4c1264fc62937}{create\+\_\+msg}} (self, \mbox{\hyperlink{namespaceqtm__node_a2d1ae45595ebf2dc3e4b9192eff977c0}{x}}, \mbox{\hyperlink{namespaceqtm__node_aeb2be84aeee33d17a92749bbc8749fce}{y}}, \mbox{\hyperlink{namespaceqtm__node_a9d6ba919a9c327e6a5f765b18fe83910}{z}}, v\+\_\+x, v\+\_\+y, v\+\_\+z, a\+\_\+x, a\+\_\+y, a\+\_\+z, yaw, v\+\_\+yaw, freq, full\+\_\+msg)
+\begin{DoxyCompactList}\small\item\em Function to create a new Drone\+Pose message and store the previous one for calculations. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classqtm__node_1_1_qualisys__node_a1580c9a4bb54bb5238d211ba175d0093}{calculate\+\_\+vel\+\_\+a}} (self, position, freq, yaw)
+\begin{DoxyCompactList}\small\item\em Function to calculate the velocity, acceleration, and yaw velocity from position data. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classqtm__node_1_1_qualisys__node_af318d2d8d7efd5c072618e3637895788}{calc}} (self, position, rot, freq)
+\begin{DoxyCompactList}\small\item\em Function to calculate the real frequency and call calculate\+\_\+vel\+\_\+a() with the position, frequency, and yaw. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classqtm__node_1_1_qualisys__node_ae52eb415b54c60f291de5d80e5fe6af5}{create\+\_\+body\+\_\+index}} (self, xml\+\_\+string)
+\begin{DoxyCompactList}\small\item\em Function to extract a name to index dictionary from 6-\/DOF settings xml. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classqtm__node_1_1_qualisys__node_ac0ab6c5a3daaf61f89716f02fb2c0dd2}{get\+\_\+freq}} (self, xml\+\_\+string)
+\begin{DoxyCompactList}\small\item\em Function to get the frequency of data packets from an xml string. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classqtm__node_1_1_qualisys__node_a2d1c8f2038f904209dd59dfe05cafe7e}{qtm\+Main}} (self)
+\begin{DoxyCompactList}\small\item\em Main asynchronous function for the Qualisys node. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classqtm__node_1_1_qualisys__node_ad08cb84e2058342fb1e413f4fece3d34}{pub}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classqtm__node_1_1_qualisys__node_a3ef8cfe3917abb0f9174b720d62ea55c}\label{classqtm__node_1_1_qualisys__node_a3ef8cfe3917abb0f9174b720d62ea55c}} 
+\index{qtm\_node.Qualisys\_node@{qtm\_node.Qualisys\_node}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!qtm\_node.Qualisys\_node@{qtm\_node.Qualisys\_node}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def qtm\+\_\+node.\+Qualisys\+\_\+node.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Initializer for the Qualisys\+\_\+node class. 
+
+Creates a publisher for Drone\+Pose messages on the \textquotesingle{}drone\+\_\+pose\textquotesingle{} topic. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classqtm__node_1_1_qualisys__node_af318d2d8d7efd5c072618e3637895788}\label{classqtm__node_1_1_qualisys__node_af318d2d8d7efd5c072618e3637895788}} 
+\index{qtm\_node.Qualisys\_node@{qtm\_node.Qualisys\_node}!calc@{calc}}
+\index{calc@{calc}!qtm\_node.Qualisys\_node@{qtm\_node.Qualisys\_node}}
+\doxysubsubsection{\texorpdfstring{calc()}{calc()}}
+{\footnotesize\ttfamily def qtm\+\_\+node.\+Qualisys\+\_\+node.\+calc (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{position,  }\item[{}]{rot,  }\item[{}]{freq }\end{DoxyParamCaption})}
+
+
+
+Function to calculate the real frequency and call calculate\+\_\+vel\+\_\+a() with the position, frequency, and yaw. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & The current position. \\
+\hline
+{\em rot} & The current rotation. \\
+\hline
+{\em freq} & The frequency of the data. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classqtm__node_1_1_qualisys__node_a1580c9a4bb54bb5238d211ba175d0093}\label{classqtm__node_1_1_qualisys__node_a1580c9a4bb54bb5238d211ba175d0093}} 
+\index{qtm\_node.Qualisys\_node@{qtm\_node.Qualisys\_node}!calculate\_vel\_a@{calculate\_vel\_a}}
+\index{calculate\_vel\_a@{calculate\_vel\_a}!qtm\_node.Qualisys\_node@{qtm\_node.Qualisys\_node}}
+\doxysubsubsection{\texorpdfstring{calculate\_vel\_a()}{calculate\_vel\_a()}}
+{\footnotesize\ttfamily def qtm\+\_\+node.\+Qualisys\+\_\+node.\+calculate\+\_\+vel\+\_\+a (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{position,  }\item[{}]{freq,  }\item[{}]{yaw }\end{DoxyParamCaption})}
+
+
+
+Function to calculate the velocity, acceleration, and yaw velocity from position data. 
+
+It uses the previous message to calculate these values. 
+\begin{DoxyParams}{Parameters}
+{\em position} & The current position. \\
+\hline
+{\em freq} & The frequency of the data. \\
+\hline
+{\em yaw} & The current yaw. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A tuple containing whether the message was published and whether the position was saved. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classqtm__node_1_1_qualisys__node_ae52eb415b54c60f291de5d80e5fe6af5}\label{classqtm__node_1_1_qualisys__node_ae52eb415b54c60f291de5d80e5fe6af5}} 
+\index{qtm\_node.Qualisys\_node@{qtm\_node.Qualisys\_node}!create\_body\_index@{create\_body\_index}}
+\index{create\_body\_index@{create\_body\_index}!qtm\_node.Qualisys\_node@{qtm\_node.Qualisys\_node}}
+\doxysubsubsection{\texorpdfstring{create\_body\_index()}{create\_body\_index()}}
+{\footnotesize\ttfamily def qtm\+\_\+node.\+Qualisys\+\_\+node.\+create\+\_\+body\+\_\+index (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{xml\+\_\+string }\end{DoxyParamCaption})}
+
+
+
+Function to extract a name to index dictionary from 6-\/DOF settings xml. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em xml\+\_\+string} & The xml string containing the 6-\/DOF settings. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A dictionary mapping body names to indices. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classqtm__node_1_1_qualisys__node_adf0dff08e9519ac880a4c1264fc62937}\label{classqtm__node_1_1_qualisys__node_adf0dff08e9519ac880a4c1264fc62937}} 
+\index{qtm\_node.Qualisys\_node@{qtm\_node.Qualisys\_node}!create\_msg@{create\_msg}}
+\index{create\_msg@{create\_msg}!qtm\_node.Qualisys\_node@{qtm\_node.Qualisys\_node}}
+\doxysubsubsection{\texorpdfstring{create\_msg()}{create\_msg()}}
+{\footnotesize\ttfamily def qtm\+\_\+node.\+Qualisys\+\_\+node.\+create\+\_\+msg (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{x,  }\item[{}]{y,  }\item[{}]{z,  }\item[{}]{v\+\_\+x,  }\item[{}]{v\+\_\+y,  }\item[{}]{v\+\_\+z,  }\item[{}]{a\+\_\+x,  }\item[{}]{a\+\_\+y,  }\item[{}]{a\+\_\+z,  }\item[{}]{yaw,  }\item[{}]{v\+\_\+yaw,  }\item[{}]{freq,  }\item[{}]{full\+\_\+msg }\end{DoxyParamCaption})}
+
+
+
+Function to create a new Drone\+Pose message and store the previous one for calculations. 
+
+It will not publish the message if full\+\_\+msg is False. 
+\begin{DoxyParams}{Parameters}
+{\em x} & The x position. \\
+\hline
+{\em y} & The y position. \\
+\hline
+{\em z} & The z position. \\
+\hline
+{\em v\+\_\+x} & The x velocity. \\
+\hline
+{\em v\+\_\+y} & The y velocity. \\
+\hline
+{\em v\+\_\+z} & The z velocity. \\
+\hline
+{\em a\+\_\+x} & The x acceleration. \\
+\hline
+{\em a\+\_\+y} & The y acceleration. \\
+\hline
+{\em a\+\_\+z} & The z acceleration. \\
+\hline
+{\em yaw} & The yaw. \\
+\hline
+{\em v\+\_\+yaw} & The yaw velocity. \\
+\hline
+{\em freq} & The frequency of the data. \\
+\hline
+{\em full\+\_\+msg} & Whether the message is complete and should be published. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A tuple containing whether the message was published and whether the position was saved. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classqtm__node_1_1_qualisys__node_ac0ab6c5a3daaf61f89716f02fb2c0dd2}\label{classqtm__node_1_1_qualisys__node_ac0ab6c5a3daaf61f89716f02fb2c0dd2}} 
+\index{qtm\_node.Qualisys\_node@{qtm\_node.Qualisys\_node}!get\_freq@{get\_freq}}
+\index{get\_freq@{get\_freq}!qtm\_node.Qualisys\_node@{qtm\_node.Qualisys\_node}}
+\doxysubsubsection{\texorpdfstring{get\_freq()}{get\_freq()}}
+{\footnotesize\ttfamily def qtm\+\_\+node.\+Qualisys\+\_\+node.\+get\+\_\+freq (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{xml\+\_\+string }\end{DoxyParamCaption})}
+
+
+
+Function to get the frequency of data packets from an xml string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em xml\+\_\+string} & The xml string containing the frequency. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The frequency. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classqtm__node_1_1_qualisys__node_a2d1c8f2038f904209dd59dfe05cafe7e}\label{classqtm__node_1_1_qualisys__node_a2d1c8f2038f904209dd59dfe05cafe7e}} 
+\index{qtm\_node.Qualisys\_node@{qtm\_node.Qualisys\_node}!qtmMain@{qtmMain}}
+\index{qtmMain@{qtmMain}!qtm\_node.Qualisys\_node@{qtm\_node.Qualisys\_node}}
+\doxysubsubsection{\texorpdfstring{qtmMain()}{qtmMain()}}
+{\footnotesize\ttfamily def qtm\+\_\+node.\+Qualisys\+\_\+node.\+qtm\+Main (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Main asynchronous function for the Qualisys node. 
+
+This function handles the connection to the Qualisys server and the streaming of data. \mbox{\Hypertarget{classqtm__node_1_1_qualisys__node_aeede304a22f80fd9358a2420eb5f821d}\label{classqtm__node_1_1_qualisys__node_aeede304a22f80fd9358a2420eb5f821d}} 
+\index{qtm\_node.Qualisys\_node@{qtm\_node.Qualisys\_node}!talker@{talker}}
+\index{talker@{talker}!qtm\_node.Qualisys\_node@{qtm\_node.Qualisys\_node}}
+\doxysubsubsection{\texorpdfstring{talker()}{talker()}}
+{\footnotesize\ttfamily def qtm\+\_\+node.\+Qualisys\+\_\+node.\+talker (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{data }\end{DoxyParamCaption})}
+
+
+
+Function for publishing data to the \textquotesingle{}drone\+\_\+pose\textquotesingle{} topic. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The data to be published. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classqtm__node_1_1_qualisys__node_ad08cb84e2058342fb1e413f4fece3d34}\label{classqtm__node_1_1_qualisys__node_ad08cb84e2058342fb1e413f4fece3d34}} 
+\index{qtm\_node.Qualisys\_node@{qtm\_node.Qualisys\_node}!pub@{pub}}
+\index{pub@{pub}!qtm\_node.Qualisys\_node@{qtm\_node.Qualisys\_node}}
+\doxysubsubsection{\texorpdfstring{pub}{pub}}
+{\footnotesize\ttfamily qtm\+\_\+node.\+Qualisys\+\_\+node.\+pub}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{qtm__node_8py}{qtm\+\_\+node.\+py}}\end{DoxyCompactItemize}

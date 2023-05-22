@@ -1,0 +1,217 @@
+\hypertarget{classcore__node_1_1_follow_algorithm}{}\doxysection{core\+\_\+node.\+Follow\+Algorithm Class Reference}
+\label{classcore__node_1_1_follow_algorithm}\index{core\_node.FollowAlgorithm@{core\_node.FollowAlgorithm}}
+Inheritance diagram for core\+\_\+node.\+Follow\+Algorithm\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcore__node_1_1_follow_algorithm}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classcore__node_1_1_follow_algorithm_a428ecf0760695909117936ed15458714}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self)
+\begin{DoxyCompactList}\small\item\em Initializes the Follow\+Algorithm class. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classcore__node_1_1_follow_algorithm_a1ca9914dd073960719aac46975815d89}{qualisys\+\_\+callback}} (self, Drone\+Pose msg)
+\begin{DoxyCompactList}\small\item\em Callback function for \textquotesingle{}drone\+\_\+pose\textquotesingle{} topic. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classcore__node_1_1_follow_algorithm_a36220e26de266c990feb9dc717a0169f}{find\+\_\+drone\+\_\+position}} (self, yaw, distance\+\_\+to\+\_\+object, object\+\_\+x, object\+\_\+y, object\+\_\+z, camera\+\_\+angle)
+\begin{DoxyCompactList}\small\item\em Calculates the drone\textquotesingle{}s position based on received data. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classcore__node_1_1_follow_algorithm_aac3d832efacc9ee9c39c2ad539be3d03}{plotter}} (self, drone\+\_\+pos, qualisys\+\_\+pos)
+\begin{DoxyCompactList}\small\item\em Updates the plot with the drone\textquotesingle{}s and qualisys\textquotesingle{}s positions. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classcore__node_1_1_follow_algorithm_af4affca3d31936a44ce4efbb33cace92}{save\+\_\+plot}} (self)
+\begin{DoxyCompactList}\small\item\em Saves the 3D plot as an image. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classcore__node_1_1_follow_algorithm_a4ad42eaa65dfef3fa719ac6366f6f21a}{position\+\_\+and\+\_\+distance\+\_\+callback}} (self, Int32\+Multi\+Array msg)
+\begin{DoxyCompactList}\small\item\em Callback function for \textquotesingle{}object\+\_\+pos\+\_\+and\+\_\+distance\textquotesingle{} topic. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classcore__node_1_1_follow_algorithm_a0020917af74570de2ed97fa28f2552ed}{distance}}
+\item 
+\mbox{\hyperlink{classcore__node_1_1_follow_algorithm_a542b06009ef54c00b44f95b4a9696559}{fig}}
+\item 
+\mbox{\hyperlink{classcore__node_1_1_follow_algorithm_a583396cc696bba39691d418117bd4d74}{drone\+\_\+x\+\_\+arr}}
+\item 
+\mbox{\hyperlink{classcore__node_1_1_follow_algorithm_af833698ae8fe18fed1a3531b10e8984b}{drone\+\_\+y\+\_\+arr}}
+\item 
+\mbox{\hyperlink{classcore__node_1_1_follow_algorithm_a97aabaeeb324dd8c2b253faab6752ab2}{drone\+\_\+z\+\_\+arr}}
+\item 
+\mbox{\hyperlink{classcore__node_1_1_follow_algorithm_ae5bc4ff8ecee2aa9fc9b7eb3adf4cd5c}{qualisys\+\_\+x\+\_\+arr}}
+\item 
+\mbox{\hyperlink{classcore__node_1_1_follow_algorithm_af208a77c93c90270672633039bddd718}{qualisys\+\_\+y\+\_\+arr}}
+\item 
+\mbox{\hyperlink{classcore__node_1_1_follow_algorithm_a6b0e59077e8245e8b62e81b870fdd838}{qualisys\+\_\+z\+\_\+arr}}
+\item 
+\mbox{\hyperlink{classcore__node_1_1_follow_algorithm_a743b0b9f47c5bb93ce31f73beb100d06}{counter}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classcore__node_1_1_follow_algorithm_a428ecf0760695909117936ed15458714}\label{classcore__node_1_1_follow_algorithm_a428ecf0760695909117936ed15458714}} 
+\index{core\_node.FollowAlgorithm@{core\_node.FollowAlgorithm}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!core\_node.FollowAlgorithm@{core\_node.FollowAlgorithm}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def core\+\_\+node.\+Follow\+Algorithm.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Initializes the Follow\+Algorithm class. 
+
+\begin{DoxyVerb}   This class is a ROS2 node that performs a follow algorithm for a drone.
+   It subscribes to 'object_pos_and_distance' and 'drone_pose' topics.
+   It also initializes arrays and counters for plotting.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classcore__node_1_1_follow_algorithm_a36220e26de266c990feb9dc717a0169f}\label{classcore__node_1_1_follow_algorithm_a36220e26de266c990feb9dc717a0169f}} 
+\index{core\_node.FollowAlgorithm@{core\_node.FollowAlgorithm}!find\_drone\_position@{find\_drone\_position}}
+\index{find\_drone\_position@{find\_drone\_position}!core\_node.FollowAlgorithm@{core\_node.FollowAlgorithm}}
+\doxysubsubsection{\texorpdfstring{find\_drone\_position()}{find\_drone\_position()}}
+{\footnotesize\ttfamily def core\+\_\+node.\+Follow\+Algorithm.\+find\+\_\+drone\+\_\+position (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{yaw,  }\item[{}]{distance\+\_\+to\+\_\+object,  }\item[{}]{object\+\_\+x,  }\item[{}]{object\+\_\+y,  }\item[{}]{object\+\_\+z,  }\item[{}]{camera\+\_\+angle }\end{DoxyParamCaption})}
+
+
+
+Calculates the drone\textquotesingle{}s position based on received data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em yaw} & Yaw angle of the drone in radians. \\
+\hline
+{\em distance\+\_\+to\+\_\+object} & Distance from the drone to the object in meters. \\
+\hline
+{\em object\+\_\+x} & X position of the object in meters. \\
+\hline
+{\em object\+\_\+y} & Y position of the object in meters. \\
+\hline
+{\em object\+\_\+z} & Z position of the object in meters. \\
+\hline
+{\em camera\+\_\+angle} & Angle of the camera in degrees.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Tuple containing the drone\textquotesingle{}s calculated 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcore__node_1_1_follow_algorithm_aac3d832efacc9ee9c39c2ad539be3d03}\label{classcore__node_1_1_follow_algorithm_aac3d832efacc9ee9c39c2ad539be3d03}} 
+\index{core\_node.FollowAlgorithm@{core\_node.FollowAlgorithm}!plotter@{plotter}}
+\index{plotter@{plotter}!core\_node.FollowAlgorithm@{core\_node.FollowAlgorithm}}
+\doxysubsubsection{\texorpdfstring{plotter()}{plotter()}}
+{\footnotesize\ttfamily def core\+\_\+node.\+Follow\+Algorithm.\+plotter (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{drone\+\_\+pos,  }\item[{}]{qualisys\+\_\+pos }\end{DoxyParamCaption})}
+
+
+
+Updates the plot with the drone\textquotesingle{}s and qualisys\textquotesingle{}s positions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em drone\+\_\+pos} & Tuple containing the drone\textquotesingle{}s position (x, y, z). \\
+\hline
+{\em qualisys\+\_\+pos} & Tuple containing the qualisys\textquotesingle{}s position (x, y, z). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classcore__node_1_1_follow_algorithm_a4ad42eaa65dfef3fa719ac6366f6f21a}\label{classcore__node_1_1_follow_algorithm_a4ad42eaa65dfef3fa719ac6366f6f21a}} 
+\index{core\_node.FollowAlgorithm@{core\_node.FollowAlgorithm}!position\_and\_distance\_callback@{position\_and\_distance\_callback}}
+\index{position\_and\_distance\_callback@{position\_and\_distance\_callback}!core\_node.FollowAlgorithm@{core\_node.FollowAlgorithm}}
+\doxysubsubsection{\texorpdfstring{position\_and\_distance\_callback()}{position\_and\_distance\_callback()}}
+{\footnotesize\ttfamily def core\+\_\+node.\+Follow\+Algorithm.\+position\+\_\+and\+\_\+distance\+\_\+callback (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{Int32\+Multi\+Array}]{msg }\end{DoxyParamCaption})}
+
+
+
+Callback function for \textquotesingle{}object\+\_\+pos\+\_\+and\+\_\+distance\textquotesingle{} topic. 
+
+\begin{DoxyVerb}   This function is triggered when a message is received on the 'object_pos_and_distance' topic.
+   It extracts the distance to the object from the received message and performs logging.
+\end{DoxyVerb}
+ 
+\begin{DoxyParams}{Parameters}
+{\em msg} & Int32\+Multi\+Array message received from the \textquotesingle{}object\+\_\+pos\+\_\+and\+\_\+distance\textquotesingle{} topic. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classcore__node_1_1_follow_algorithm_a1ca9914dd073960719aac46975815d89}\label{classcore__node_1_1_follow_algorithm_a1ca9914dd073960719aac46975815d89}} 
+\index{core\_node.FollowAlgorithm@{core\_node.FollowAlgorithm}!qualisys\_callback@{qualisys\_callback}}
+\index{qualisys\_callback@{qualisys\_callback}!core\_node.FollowAlgorithm@{core\_node.FollowAlgorithm}}
+\doxysubsubsection{\texorpdfstring{qualisys\_callback()}{qualisys\_callback()}}
+{\footnotesize\ttfamily def core\+\_\+node.\+Follow\+Algorithm.\+qualisys\+\_\+callback (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{Drone\+Pose}]{msg }\end{DoxyParamCaption})}
+
+
+
+Callback function for \textquotesingle{}drone\+\_\+pose\textquotesingle{} topic. 
+
+\begin{DoxyVerb}   This function is triggered when a message is received on the 'drone_pose' topic.
+   It calculates the drone's estimated position based on received data and performs logging and plotting.
+\end{DoxyVerb}
+ 
+\begin{DoxyParams}{Parameters}
+{\em msg} & Drone\+Pose message received from the \textquotesingle{}drone\+\_\+pose\textquotesingle{} topic. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classcore__node_1_1_follow_algorithm_af4affca3d31936a44ce4efbb33cace92}\label{classcore__node_1_1_follow_algorithm_af4affca3d31936a44ce4efbb33cace92}} 
+\index{core\_node.FollowAlgorithm@{core\_node.FollowAlgorithm}!save\_plot@{save\_plot}}
+\index{save\_plot@{save\_plot}!core\_node.FollowAlgorithm@{core\_node.FollowAlgorithm}}
+\doxysubsubsection{\texorpdfstring{save\_plot()}{save\_plot()}}
+{\footnotesize\ttfamily def core\+\_\+node.\+Follow\+Algorithm.\+save\+\_\+plot (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Saves the 3D plot as an image. 
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classcore__node_1_1_follow_algorithm_a743b0b9f47c5bb93ce31f73beb100d06}\label{classcore__node_1_1_follow_algorithm_a743b0b9f47c5bb93ce31f73beb100d06}} 
+\index{core\_node.FollowAlgorithm@{core\_node.FollowAlgorithm}!counter@{counter}}
+\index{counter@{counter}!core\_node.FollowAlgorithm@{core\_node.FollowAlgorithm}}
+\doxysubsubsection{\texorpdfstring{counter}{counter}}
+{\footnotesize\ttfamily core\+\_\+node.\+Follow\+Algorithm.\+counter}
+
+\mbox{\Hypertarget{classcore__node_1_1_follow_algorithm_a0020917af74570de2ed97fa28f2552ed}\label{classcore__node_1_1_follow_algorithm_a0020917af74570de2ed97fa28f2552ed}} 
+\index{core\_node.FollowAlgorithm@{core\_node.FollowAlgorithm}!distance@{distance}}
+\index{distance@{distance}!core\_node.FollowAlgorithm@{core\_node.FollowAlgorithm}}
+\doxysubsubsection{\texorpdfstring{distance}{distance}}
+{\footnotesize\ttfamily core\+\_\+node.\+Follow\+Algorithm.\+distance}
+
+\mbox{\Hypertarget{classcore__node_1_1_follow_algorithm_a583396cc696bba39691d418117bd4d74}\label{classcore__node_1_1_follow_algorithm_a583396cc696bba39691d418117bd4d74}} 
+\index{core\_node.FollowAlgorithm@{core\_node.FollowAlgorithm}!drone\_x\_arr@{drone\_x\_arr}}
+\index{drone\_x\_arr@{drone\_x\_arr}!core\_node.FollowAlgorithm@{core\_node.FollowAlgorithm}}
+\doxysubsubsection{\texorpdfstring{drone\_x\_arr}{drone\_x\_arr}}
+{\footnotesize\ttfamily core\+\_\+node.\+Follow\+Algorithm.\+drone\+\_\+x\+\_\+arr}
+
+\mbox{\Hypertarget{classcore__node_1_1_follow_algorithm_af833698ae8fe18fed1a3531b10e8984b}\label{classcore__node_1_1_follow_algorithm_af833698ae8fe18fed1a3531b10e8984b}} 
+\index{core\_node.FollowAlgorithm@{core\_node.FollowAlgorithm}!drone\_y\_arr@{drone\_y\_arr}}
+\index{drone\_y\_arr@{drone\_y\_arr}!core\_node.FollowAlgorithm@{core\_node.FollowAlgorithm}}
+\doxysubsubsection{\texorpdfstring{drone\_y\_arr}{drone\_y\_arr}}
+{\footnotesize\ttfamily core\+\_\+node.\+Follow\+Algorithm.\+drone\+\_\+y\+\_\+arr}
+
+\mbox{\Hypertarget{classcore__node_1_1_follow_algorithm_a97aabaeeb324dd8c2b253faab6752ab2}\label{classcore__node_1_1_follow_algorithm_a97aabaeeb324dd8c2b253faab6752ab2}} 
+\index{core\_node.FollowAlgorithm@{core\_node.FollowAlgorithm}!drone\_z\_arr@{drone\_z\_arr}}
+\index{drone\_z\_arr@{drone\_z\_arr}!core\_node.FollowAlgorithm@{core\_node.FollowAlgorithm}}
+\doxysubsubsection{\texorpdfstring{drone\_z\_arr}{drone\_z\_arr}}
+{\footnotesize\ttfamily core\+\_\+node.\+Follow\+Algorithm.\+drone\+\_\+z\+\_\+arr}
+
+\mbox{\Hypertarget{classcore__node_1_1_follow_algorithm_a542b06009ef54c00b44f95b4a9696559}\label{classcore__node_1_1_follow_algorithm_a542b06009ef54c00b44f95b4a9696559}} 
+\index{core\_node.FollowAlgorithm@{core\_node.FollowAlgorithm}!fig@{fig}}
+\index{fig@{fig}!core\_node.FollowAlgorithm@{core\_node.FollowAlgorithm}}
+\doxysubsubsection{\texorpdfstring{fig}{fig}}
+{\footnotesize\ttfamily core\+\_\+node.\+Follow\+Algorithm.\+fig}
+
+\mbox{\Hypertarget{classcore__node_1_1_follow_algorithm_ae5bc4ff8ecee2aa9fc9b7eb3adf4cd5c}\label{classcore__node_1_1_follow_algorithm_ae5bc4ff8ecee2aa9fc9b7eb3adf4cd5c}} 
+\index{core\_node.FollowAlgorithm@{core\_node.FollowAlgorithm}!qualisys\_x\_arr@{qualisys\_x\_arr}}
+\index{qualisys\_x\_arr@{qualisys\_x\_arr}!core\_node.FollowAlgorithm@{core\_node.FollowAlgorithm}}
+\doxysubsubsection{\texorpdfstring{qualisys\_x\_arr}{qualisys\_x\_arr}}
+{\footnotesize\ttfamily core\+\_\+node.\+Follow\+Algorithm.\+qualisys\+\_\+x\+\_\+arr}
+
+\mbox{\Hypertarget{classcore__node_1_1_follow_algorithm_af208a77c93c90270672633039bddd718}\label{classcore__node_1_1_follow_algorithm_af208a77c93c90270672633039bddd718}} 
+\index{core\_node.FollowAlgorithm@{core\_node.FollowAlgorithm}!qualisys\_y\_arr@{qualisys\_y\_arr}}
+\index{qualisys\_y\_arr@{qualisys\_y\_arr}!core\_node.FollowAlgorithm@{core\_node.FollowAlgorithm}}
+\doxysubsubsection{\texorpdfstring{qualisys\_y\_arr}{qualisys\_y\_arr}}
+{\footnotesize\ttfamily core\+\_\+node.\+Follow\+Algorithm.\+qualisys\+\_\+y\+\_\+arr}
+
+\mbox{\Hypertarget{classcore__node_1_1_follow_algorithm_a6b0e59077e8245e8b62e81b870fdd838}\label{classcore__node_1_1_follow_algorithm_a6b0e59077e8245e8b62e81b870fdd838}} 
+\index{core\_node.FollowAlgorithm@{core\_node.FollowAlgorithm}!qualisys\_z\_arr@{qualisys\_z\_arr}}
+\index{qualisys\_z\_arr@{qualisys\_z\_arr}!core\_node.FollowAlgorithm@{core\_node.FollowAlgorithm}}
+\doxysubsubsection{\texorpdfstring{qualisys\_z\_arr}{qualisys\_z\_arr}}
+{\footnotesize\ttfamily core\+\_\+node.\+Follow\+Algorithm.\+qualisys\+\_\+z\+\_\+arr}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{core__node_8py}{core\+\_\+node.\+py}}\end{DoxyCompactItemize}

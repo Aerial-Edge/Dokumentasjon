@@ -1,0 +1,153 @@
+\hypertarget{classobject__detection__c4_1_1_object_detection}{}\doxysection{object\+\_\+detection\+\_\+c4.\+Object\+Detection Class Reference}
+\label{classobject__detection__c4_1_1_object_detection}\index{object\_detection\_c4.ObjectDetection@{object\_detection\_c4.ObjectDetection}}
+
+
+A class to detect objects in an image and publish their locations as ROS messages.  
+
+
+Inheritance diagram for object\+\_\+detection\+\_\+c4.\+Object\+Detection\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classobject__detection__c4_1_1_object_detection}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classobject__detection__c4_1_1_object_detection_a473821c127d5351f6cc5659c2eadf321}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self)
+\begin{DoxyCompactList}\small\item\em Initializes Object\+Detection with a subscriber, bridge, FPS reader, and publisher. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classobject__detection__c4_1_1_object_detection_a76ed8ae33f2701f4591e0c0ef28de786}{is\+\_\+circle}} (self, cnt, threshold=0.\+7)
+\begin{DoxyCompactList}\small\item\em Determines if a contour is a circle. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classobject__detection__c4_1_1_object_detection_a4d36efedfbee17be52df026e5aadfe2f}{process\+\_\+image}} (self, msg)
+\begin{DoxyCompactList}\small\item\em Processes image data and publishes object locations. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classobject__detection__c4_1_1_object_detection_a6fc3d05d06c79fcc91124f6ee61b2b3c}{publish\+\_\+dist\+\_\+and\+\_\+pos}} (self, x, y, distance)
+\begin{DoxyCompactList}\small\item\em Publishes the distance and position of an object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classobject__detection__c4_1_1_object_detection_a0b2efd8e505d64098b42e3ef685ff3b6}{subscription}}
+\item 
+\mbox{\hyperlink{classobject__detection__c4_1_1_object_detection_aa8ed30ee76592720a92a4ed85500044c}{bridge}}
+\item 
+\mbox{\hyperlink{classobject__detection__c4_1_1_object_detection_a79e731133dc0e08689ebdbf9e2aa7cd3}{fpsreader}}
+\item 
+\mbox{\hyperlink{classobject__detection__c4_1_1_object_detection_ae0425ea3f57fe784e3ffd61f4d9cb0ed}{distance\+\_\+and\+\_\+position\+\_\+publisher}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class to detect objects in an image and publish their locations as ROS messages. 
+
+This class is a Node in ROS that subscribes to image data, processes it to find objects, and publishes the locations of these objects. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classobject__detection__c4_1_1_object_detection_a473821c127d5351f6cc5659c2eadf321}\label{classobject__detection__c4_1_1_object_detection_a473821c127d5351f6cc5659c2eadf321}} 
+\index{object\_detection\_c4.ObjectDetection@{object\_detection\_c4.ObjectDetection}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!object\_detection\_c4.ObjectDetection@{object\_detection\_c4.ObjectDetection}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def object\+\_\+detection\+\_\+c4.\+Object\+Detection.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Initializes Object\+Detection with a subscriber, bridge, FPS reader, and publisher. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classobject__detection__c4_1_1_object_detection_a76ed8ae33f2701f4591e0c0ef28de786}\label{classobject__detection__c4_1_1_object_detection_a76ed8ae33f2701f4591e0c0ef28de786}} 
+\index{object\_detection\_c4.ObjectDetection@{object\_detection\_c4.ObjectDetection}!is\_circle@{is\_circle}}
+\index{is\_circle@{is\_circle}!object\_detection\_c4.ObjectDetection@{object\_detection\_c4.ObjectDetection}}
+\doxysubsubsection{\texorpdfstring{is\_circle()}{is\_circle()}}
+{\footnotesize\ttfamily def object\+\_\+detection\+\_\+c4.\+Object\+Detection.\+is\+\_\+circle (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{cnt,  }\item[{}]{threshold = {\ttfamily 0.7} }\end{DoxyParamCaption})}
+
+
+
+Determines if a contour is a circle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cnt} & The contour to evaluate. \\
+\hline
+{\em threshold} & The circularity threshold. Defaults to 0.\+7.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+
+bool True if the contour is a circle, False otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classobject__detection__c4_1_1_object_detection_a4d36efedfbee17be52df026e5aadfe2f}\label{classobject__detection__c4_1_1_object_detection_a4d36efedfbee17be52df026e5aadfe2f}} 
+\index{object\_detection\_c4.ObjectDetection@{object\_detection\_c4.ObjectDetection}!process\_image@{process\_image}}
+\index{process\_image@{process\_image}!object\_detection\_c4.ObjectDetection@{object\_detection\_c4.ObjectDetection}}
+\doxysubsubsection{\texorpdfstring{process\_image()}{process\_image()}}
+{\footnotesize\ttfamily def object\+\_\+detection\+\_\+c4.\+Object\+Detection.\+process\+\_\+image (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{msg }\end{DoxyParamCaption})}
+
+
+
+Processes image data and publishes object locations. 
+
+\begin{DoxyVerb}   This function converts the ROS image message to an OpenCV format,
+   finds objects in the image, and publishes their locations.
+\end{DoxyVerb}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & The ROS image message to process. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classobject__detection__c4_1_1_object_detection_a6fc3d05d06c79fcc91124f6ee61b2b3c}\label{classobject__detection__c4_1_1_object_detection_a6fc3d05d06c79fcc91124f6ee61b2b3c}} 
+\index{object\_detection\_c4.ObjectDetection@{object\_detection\_c4.ObjectDetection}!publish\_dist\_and\_pos@{publish\_dist\_and\_pos}}
+\index{publish\_dist\_and\_pos@{publish\_dist\_and\_pos}!object\_detection\_c4.ObjectDetection@{object\_detection\_c4.ObjectDetection}}
+\doxysubsubsection{\texorpdfstring{publish\_dist\_and\_pos()}{publish\_dist\_and\_pos()}}
+{\footnotesize\ttfamily def object\+\_\+detection\+\_\+c4.\+Object\+Detection.\+publish\+\_\+dist\+\_\+and\+\_\+pos (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{x,  }\item[{}]{y,  }\item[{}]{distance }\end{DoxyParamCaption})}
+
+
+
+Publishes the distance and position of an object. 
+
+\begin{DoxyVerb}   This function creates and publishes a ROS message containing the x, y position and distance of an object.
+\end{DoxyVerb}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The x position of the object. \\
+\hline
+{\em y} & The y position of the object. \\
+\hline
+{\em distance} & The distance to the object. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classobject__detection__c4_1_1_object_detection_aa8ed30ee76592720a92a4ed85500044c}\label{classobject__detection__c4_1_1_object_detection_aa8ed30ee76592720a92a4ed85500044c}} 
+\index{object\_detection\_c4.ObjectDetection@{object\_detection\_c4.ObjectDetection}!bridge@{bridge}}
+\index{bridge@{bridge}!object\_detection\_c4.ObjectDetection@{object\_detection\_c4.ObjectDetection}}
+\doxysubsubsection{\texorpdfstring{bridge}{bridge}}
+{\footnotesize\ttfamily object\+\_\+detection\+\_\+c4.\+Object\+Detection.\+bridge}
+
+\mbox{\Hypertarget{classobject__detection__c4_1_1_object_detection_ae0425ea3f57fe784e3ffd61f4d9cb0ed}\label{classobject__detection__c4_1_1_object_detection_ae0425ea3f57fe784e3ffd61f4d9cb0ed}} 
+\index{object\_detection\_c4.ObjectDetection@{object\_detection\_c4.ObjectDetection}!distance\_and\_position\_publisher@{distance\_and\_position\_publisher}}
+\index{distance\_and\_position\_publisher@{distance\_and\_position\_publisher}!object\_detection\_c4.ObjectDetection@{object\_detection\_c4.ObjectDetection}}
+\doxysubsubsection{\texorpdfstring{distance\_and\_position\_publisher}{distance\_and\_position\_publisher}}
+{\footnotesize\ttfamily object\+\_\+detection\+\_\+c4.\+Object\+Detection.\+distance\+\_\+and\+\_\+position\+\_\+publisher}
+
+\mbox{\Hypertarget{classobject__detection__c4_1_1_object_detection_a79e731133dc0e08689ebdbf9e2aa7cd3}\label{classobject__detection__c4_1_1_object_detection_a79e731133dc0e08689ebdbf9e2aa7cd3}} 
+\index{object\_detection\_c4.ObjectDetection@{object\_detection\_c4.ObjectDetection}!fpsreader@{fpsreader}}
+\index{fpsreader@{fpsreader}!object\_detection\_c4.ObjectDetection@{object\_detection\_c4.ObjectDetection}}
+\doxysubsubsection{\texorpdfstring{fpsreader}{fpsreader}}
+{\footnotesize\ttfamily object\+\_\+detection\+\_\+c4.\+Object\+Detection.\+fpsreader}
+
+\mbox{\Hypertarget{classobject__detection__c4_1_1_object_detection_a0b2efd8e505d64098b42e3ef685ff3b6}\label{classobject__detection__c4_1_1_object_detection_a0b2efd8e505d64098b42e3ef685ff3b6}} 
+\index{object\_detection\_c4.ObjectDetection@{object\_detection\_c4.ObjectDetection}!subscription@{subscription}}
+\index{subscription@{subscription}!object\_detection\_c4.ObjectDetection@{object\_detection\_c4.ObjectDetection}}
+\doxysubsubsection{\texorpdfstring{subscription}{subscription}}
+{\footnotesize\ttfamily object\+\_\+detection\+\_\+c4.\+Object\+Detection.\+subscription}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{object__detection__c4_8py}{object\+\_\+detection\+\_\+c4.\+py}}\end{DoxyCompactItemize}
