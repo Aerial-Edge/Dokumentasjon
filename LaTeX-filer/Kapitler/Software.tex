@@ -1,0 +1,95 @@
+\title{Software}
+
+\section{Operating System Architecture}
+A key element in our research is to make sure our results are predictable and reproducible, and in order to achieve this we need to control for variables as much as possible. Our plan is to create a common platform across all hardware and software configuration, this is so that any variations on the operating system level is negated. 
+The hardware we are working on is best supported on Linux, where the kernel and driver architecture is rapidly evolving, and the difference between different versions can be very noticeable.
+
+\section{Nvidia Jetpack}
+The Nvidia Jetpack SDK is a package of tools, libraries, and frameworks designed to simplify the development and deployment of AI applications on the Nvidia Jetson platform. Jetpack SDK offers developers a range of resources and tools.
+\\
+Operating system - An optimized Linux-based operating system for Jetson platforms.
+\\
+CUDA Toolkit – A set of tools and libraries for developing GPU-accelerated applications.
+\\
+cuDNN library – A deep learning library that provides GPU-accelerated primitives for deep learning frameworks.
+\\
+TensorRT – A high-performance deep learning inference optimizer and runtime library.
+
+\section{ROS2}
+ROS2 is an open-source robotic middleware that offers a comprehensive framework for robot control and interaction by facilitating hardware abstraction, device management, and inter-process communication. It enables a distributed network of processes that can work together seamlessly, employing different communication methods to ensure efficient and effective robot operation. 
+
+\section{TensorRT}
+TensorRT is an NVIDIA-developed high-performance deep learning inference library, designed to accelerate neural network computations on NVIDIA GPUs. This tool optimizes and compiles models from major deep learning frameworks, such as TensorFlow or PyTorch, into eﬀicient CUDA code. By utilizing kernel fusion, layer auto-tuning, and precision calibration, TensorRT significantly enhances inference latency and throughput, enabling real-time performance for various AI applications.
+
+\section{Tensorflow Lite}
+TensorFlow Lite is a toolset designed for running machine learning models on devices like mobile phones and embedded systems. It's optimized for on-device performance, focusing on low latency, privacy, reduced model size, and efficient power consumption. The framework supports multiple platforms, including Android, iOS, embedded Linux, and microcontrollers, making it versatile for various applications. 
+
+\section{Docker}
+Docker is a platform that allows you to easily create, deploy, and run applications in a containerized environment. Containers are lightweight and portable, and they allow you to package up all of the dependencies and configurations that your application needs to run.\\
+
+With Docker, you can create a container image that includes your application code, libraries, and system tools, and then deploy that image to any Docker-enabled environment, whether it's your local machine or a cloud-based server.\\
+
+Docker provides a number of benefits, including:\\
+
+Portability: Docker containers can be run on any Docker-enabled system, regardless of the underlying operating system or hardware.\\
+
+Isolation: Containers provide a level of isolation between applications, so you can run multiple applications on the same system without worrying about conflicts or dependencies.\\
+
+Consistency: By packaging all of your application's dependencies and configurations into a container image, you can ensure that your application runs consistently across different environments.\\
+
+Efficiency: Containers are lightweight and can be started and stopped quickly, which makes them ideal for scaling and resource optimization.\\
+
+Overall, Docker is a powerful tool for simplifying application deployment and management, and it's widely used in both development and production environments
+
+\section{YOLO (You Only look Once)}
+YOLO (You Only Look Once) is a real-time object detection system that is known for its speed and accuracy. It is based on a single neural network that simultaneously predicts multiple bounding boxes and class probabilities for each box. Unlike traditional object detection methods that use a sliding window approach, YOLO processes an entire image in a single forward pass, making it highly efficient for real-time applications.
+YOLO divides an image into a S x S grid and predicts bounding boxes and class probabilities for each grid cell. The model then combines these predictions to produce the final object detection output. 
+The system has undergone several revisions and improvements, with the latest version being YOLOv8.
+
+\section{OpenCV}
+OpenCV is an open-source computer vision and machine learning library that is used to analyze and manipulate visual data in real-time. It is used for a wide range of applications, including image and video processing, facial recognition, object detection, and tracking. OpenCV provides a set of powerful tools and algorithms which makes it easy to work with images and videos, including tools for image filtering, feature detection, and machine learning. It is widely used in industries like robotics, surveillance, and automotive. OpenCV is particularly useful with Python due to its ease of use making it a popular choice for developers and researchers who want to work with computer vision applications.
+
+OpenCV has numerous advantages and some of them are:
+\begin{itemize}
+\item Open-source and free to use and modify 
+\item Supported by a vast community of developers 
+\item Highly efficient with optimized algorithms for real-time visual data 
+processing
+\end{itemize}
+
+However, there are some drawbacks to using OpenCV including: 
+\begin{itemize}
+\item Steep learning curve, especially for those new to computer vision and machine learning 
+\item Somewhat complex to integrate with certain systems. Depending on the specific requirements and capabilities of the system being used
+\item Primarily a low-level library, challenging to use for higher-level applications 
+\end{itemize}
+Despite these limitations, OpenCV remains a powerful and versatile tool for visual data analysis and manipulation.
+
+There are different techniques used in OpenCV and some of them are: 
+
+\textbf{Blob detection:}
+
+In OpenCV, "blobs" refer to groups of connected pixels that share similar characteristics, such as color or texture. Blob detection is a common computer vision technique used for image segmentation, object tracking, and feature extraction
+
+\textbf{Contour detection:} 
+
+Contours refer to the boundaries of objects in an image or video. They are often used for object detection, recognition, and classification. In OpenCV, contours can be found using the "findContours()" function, which detects and extracts the boundaries of objects in an image.
+
+%More information about techniques used in OpenCV can be found here 
+
+\section{Computer vision}
+“Computer vision is a field of artificial intelligence (AI) that enables computers and systems to derive meaningful information from digital images, videos and other visual inputs — and take actions or make recommendations based on that information. If AI enables computers to think, computer vision enables them to see, observe and understand.” \cite{Computer-vision} 
+
+Computer vision is a broad field and includes a wide range of techniques and applications. in this thesis, we will use two of them, object detection and blob detection.
+
+%Skal denne slettes?
+\subsection{Blob detection}
+Blob detection is considered one of the traditional techniques in computer vision. It relies on simpler image processing methods rather than more advanced machine learning approaches. It detects areas or "blobs" in an image that differs from the surroundings. This can be color, shape, or size.
+%Hvor hører denne hjemme nå?
+\subsection{Object detection}
+Object detection is a more advanced technique of computer vision. Widely-used deep learning methods that employ convolutional neural networks (CNNs), such as SSD and YOLO, can automatically learn to identify objects in images. You have two options when training a model: you can either create a custom model from scratch or employ transfer learning. Transfer learning involves using a pre-trained model and adapting it with your own dataset to suit your specific needs.
+
+
+\section{Qualisys}
+
+Qualisys motion capture systems can be used for accurately determining the position of the drone. The system provides precise real-time 6DOF (6 degrees of freedom) positioning data, allowing you to track and analyze the drone's position in the room or any environment. 

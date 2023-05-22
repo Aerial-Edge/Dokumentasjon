@@ -1,0 +1,452 @@
+%% sample template file for a BSc Thesis
+%% The default is the norsk version with two sided setup:
+\documentclass[
+%norsk,     %% comment for english version
+oneside    %% uncomment for onesided layout
+%nosummary  %% uncomment if no summary page should be generated
+]{USN-BSc}
+
+\usepackage{booktabs}
+
+\usepackage{comment}
+
+\usepackage{tikz}
+\usepackage{float}
+\usetikzlibrary{shapes.geometric, arrows, positioning}
+\usepackage{subcaption}
+
+
+% --- Bibliography setup ---
+%%% default is the "ieee" style
+\usepackage[style=ieee, sorting=none]{biblatex}
+%%% If you want to use "author-year" style
+%%% where `\cite{Foo2011}` generates "Foo et al. (2011)"
+%%% and   `\parencite{Foo2011}` generates "(Foo et al. 2011)"
+%%% then comment the line above and use
+%\usepackage[style=authoryear]{biblatex}
+%%% or
+%%% if you want to use "alphabetic" style then use
+%%% where `cite[Foo2011]` generates "[Foo11]"
+%%% then comment the line above and uhttp://www.usn.no/se
+%\usepackage[style=alphabetic]{biblatex}
+%%% instead.
+%% load the bib file:
+\addbibresource{thesis.bib}
+
+\usepackage{hyperref}
+\usepackage{lipsum} % just for providing fill text used in this template
+\usepackage{colortbl}
+\usepackage{tabularx}
+\usepackage{xcolor}
+%code setup
+% color def
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codeteal}{rgb}{0,0.8,0.8}
+\definecolor{codeyellow}{rgb}{0.7,0.7,0.2}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+
+% listings
+\usepackage{listings}
+
+
+% 0. Basic Color Theme
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{codeyellow},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codeteal},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+% General Setting of listings
+
+\lstset{style=mystyle}
+% 1. General Python Keywords List
+\lstdefinelanguage{PythonPlus}[]{Python}{
+  morekeywords=[1]{,as,assert,nonlocal,with,yield,self,True,False,None,} % Python builtin
+  morekeywords=[2]{,__init__,__add__,__mul__,__div__,__sub__,__call__,__getitem__,__setitem__,__eq__,__ne__,__nonzero__,__rmul__,__radd__,__repr__,__str__,__get__,__truediv__,__pow__,__name__,__future__,__all__,}, % magic methods
+  morekeywords=[3]{,object,type,isinstance,copy,deepcopy,zip,enumerate,reversed,list,set,len,dict,tuple,range,xrange,append,execfile,real,imag,reduce,str,repr,}, % common functions
+  morekeywords=[4]{,Exception,NameError,IndexError,SyntaxError,TypeError,ValueError,OverflowError,ZeroDivisionError,}, % errors
+  morekeywords=[5]{,ode,fsolve,sqrt,exp,sin,cos,arctan,arctan2,arccos,pi, array,norm,solve,dot,arange,isscalar,max,sum,flatten,shape,reshape,find,any,all,abs,plot,linspace,legend,quad,polyval,polyfit,hstack,concatenate,vstack,column_stack,empty,zeros,ones,rand,vander,grid,pcolor,eig,eigs,eigvals,svd,qr,tan,det,logspace,roll,min,mean,cumsum,cumprod,diff,vectorize,lstsq,cla,eye,xlabel,ylabel,squeeze,}, % numpy / math
+}
+% 2. New Language based on Python
+\lstdefinelanguage{PyBrIM}[]{PythonPlus}{
+  emph={d,E,a,Fc28,Fy,Fu,D,des,supplier,Material,Rectangle,PyElmt},
+}
+% 3. Extended theme
+\lstdefinestyle{colorEX}{
+  basicstyle=\ttfamily,
+  backgroundcolor=\color{white},
+  commentstyle=\color{darkgreen}\slshape,
+  keywordstyle=\color{blue}\bfseries\itshape,
+  keywordstyle=[2]\color{blue}\bfseries,
+  keywordstyle=[3]\color{grass},
+  keywordstyle=[4]\color{red},
+  keywordstyle=[5]\color{orange},
+  stringstyle=\color{darkred},
+  emphstyle=\color{pink}\underbar,
+}
+% --- general setup ---
+%% Please fill in the following parameters:
+\newcommand{\mytitle}{%
+%% title:
+Image Processing on the Edge}
+\newcommand{\mysubtitle}{%
+%% subject code:
+TS3000 Bacheloroppgave IRI
+}
+
+\newcommand{\myauthor}{%
+%% group code:
+Group 6 - Aerial Edge
+}
+
+\newcommand{\supervisor}{%
+%% supervisor:
+JAN DYRE BJERKNES}
+
+\begin{document}
+
+% --- title page setup ---
+\USNtitlepage%
+%% Please provide the following information:
+%% #1 semster:
+{1}
+%% #2 optional figure (set to {} if not wanted)
+{\vfill
+   \includegraphics[width=\textwidth]{fig/aedgelogo.png}}
+%% #3 date
+{}  % leave this empty to deactivate display
+%% #4 group members
+{%
+SINDRE NES,\\
+EVEN JØRGENSEN,\\
+ABDUL MAJEED ALIZAI,\\
+ÅDNE KVÅLE,\\
+MARTIN BØRTE LIESTØL,\\
+JON JAHREN
+}
+%% #5 Project partner:
+{Kongsberg Defence \& Aerospace}
+%% #6 Norwegian Summary:
+{%
+Midlertidig tekst
+}
+%% #7 English Summary:
+{%
+The Local Hawk drone project, using Single Board Computers (SBCs), is struggling with tasks like motor control and object detection due to the limitations of the SBCs. To address these issues, this project examined four different hardware and software setups for better object detection in lightweight drones. We evaluated each setup based on how accurately they could detect objects, how quickly they could process images, their power usage, weight, and how complex they were to set up and use. The study highlighted the need to carefully choose the right setup to get the best performance in object detection. This research provides valuable insights into image processing for lightweight drones, which could benefit the Local Hawk project and similar efforts.
+}
+
+\chapter{Acknowledgements}
+We'd like to say a big thank you to our supervisors, Jan Dyre Bjerknes and Henning Gundersen. Their advice and support really helped us get through this project.
+
+Additionally, we would like to thank our university and our department for providing us with the resources and environment to learn and carry out this project. The opportunities and support we've received here have been invaluable.
+
+%% The chapter name for preface is set depending on language
+\chapter{Abstract}
+\label{sec:preface}
+%\addcontentsline{toc}{chapter}{\USNpreface}
+
+%\lipsum[1]>
+
+
+The Local Hawk drone project, currently using Single Board Computers (SBCs), faces difficulties in simultaneous task execution such as motor control and object detection due to the limitations of the SBCs. The necessity to improve frame rates and efficiency led to an exploration of various hardware and software configurations.
+
+The primary aim of the research was to evaluate and compare four different configurations to optimize object detection capabilities in lightweight Unmanned Aerial Vehicles (UAVs). The key areas of focus were processing power, accuracy, and energy efficiency.
+
+The study conducted an exhaustive benchmarking of four hardware and software configurations, evaluating them on various parameters such as detection accuracy (precision, recall, and F1-score), frame rate, power consumption, weight efficiency, and complexity of setup and operation.
+
+The analysis demonstrated the importance of carefully selecting hardware and software configurations to achieve optimal object detection performance within the constraints of lightweight UAVs. It was found that configurations varied greatly in their precision, recall, and F1-scores, with different trade-offs between frame rate and power consumption. Additionally, weight efficiency and complexity of setup and operation played crucial roles in determining the overall suitability of each configuration.
+
+This research significantly contributes to the understanding of edge image processing for lightweight UAVs, serving as a foundation for future investigations in this area. The results hold practical relevance for the Local Hawk project and similar endeavors aiming to enhance the capabilities of lightweight UAVs in applications ranging from surveillance to search-and-rescue operations.
+
+Keywords: Single Board Computers (SBC), Local Hawk, Unmanned Aerial Vehicles (UAV), object detection, frames-per-second (FPS), edge image processing, hardware configuration, software configuration, lightweight UAV technologies.
+
+Kongsberg, \today
+
+% We no longer need signatures here...
+% \bigskip
+% % Fill in your names in the table:
+% \begin{center}
+%     \begin{tabular}{ll}
+%       \makebox[50mm]{\hrulefill}  \hspace{40mm}   & \makebox[50mm]{\hrulefill} \\
+%       <deltaker>                                  & <deltaker> \\[20mm]
+%       \makebox[50mm]{\hrulefill}  \hspace{40mm}   & \makebox[50mm]{\hrulefill} \\
+%       <deltaker>                & <deltaker>
+%     \end{tabular}
+% \end{center}
+% \vfill
+
+%% table of contents
+\tableofcontents
+\addcontentsline{toc}{chapter}{\contentsname}
+
+\listoffigures % out-comment if unwanted
+\addcontentsline{toc}{section}{\listfigurename}
+
+%\listoftables  % out-comment if unwanted
+
+%\addcontentsline{toc}{section}{\listtablename}
+
+%\chapter*{Forkortelser}
+%\label{sec:nomenclature}
+
+%\begin{longtable}{ll}
+%  \textbf{Symbol} & \textbf{Explanation}\endhead\\
+ 
+%\end{longtable}
+
+\chapter{Introduction}
+\label{ch:intro}
+\input{Kapitler/Introduction}
+
+\chapter{Process}
+\label{ch:process}
+\input{Kapitler/Process}
+
+%\chapter{Project Tools}
+%\label{ch:projecttools}
+%\input{Kapitler/Project Tools}
+
+%\chapter{Hardware}
+%\label{ch:hardware}
+%\input{Kapitler/Hardware}
+
+%\chapter{Software}
+%\label{ch:software}
+%\input{Kapitler/Software}
+
+%\chapter{Risk Analysis}
+%\label{ch:risikoanalyse}
+%\input{Kapitler/Risk}
+
+%\chapter{Algorithms}
+%\label{ch:algorithms}
+%\input{Kapitler/Algorithms}
+
+\chapter{Configurations}
+\label{ch:Method}
+\input{Kapitler/Method}
+
+\chapter{Measurements}
+\label{ch:Measurements}
+\input{Kapitler/Measurements}
+
+\chapter{Conclusion}
+\label{ch:conclusion}
+\input{Kapitler/Conclusion}
+
+
+%\chapter{Hovedkapitlene}
+%\label{ch:main}
+
+%\section{Underkapittel}
+%\label{sec:underkappittel}
+
+%<Her følger eksempler på objekter som ofte brukes i en rapport og hvordan de skal nummereres.>
+
+%Under er det en tabell som benevnes \tabref{tab:number} (\LaTeX-kode: \verb#\tabref{tab:number}#). OBS! Legg merke til at tabellteksten skal være på oversiden av tabellen.
+
+%\begin{table}[!ht]
+%  \caption{The different number systems}
+%  \label{tab:number}
+%  \centering
+%  \begin{tabular}{|r|l|}
+%    \hline
+%    7C0 & hexadecimal \\
+%    3700 & octal \\ \cline{2-2}
+%    11111000000 & binary \\
+%    \hline \hline
+%    1984 & decimal \\
+%    \hline
+%  \end{tabular}
+%\end{table}
+
+%\section{Enda en underkapittel}
+%\label{sec:endaunderkappittel}
+
+%Under følger en figur og medfølgende figurtekst, \figref{fig:usn-logo} (\LaTeX-kode: \verb#\figref{fig:usn-logo}#), som skal plasseres under bildet/figuren. Figuren og figurteksten skal være midtstilt.
+
+%\begin{figure}[!ht]
+%  \centering
+%  \includegraphics[width=0.8\textwidth]{USN_logo}
+%  \caption{Norwegian (bokmål) variant of the USN logo}
+%  \label{fig:usn-logo}
+%\end{figure}
+
+%\lipsum
+
+%\begin{figure}[!ht]
+%  \centering
+%  \includegraphics[width=0.8\textwidth]{USN_logo_en}
+%  \caption{English variant of the USN logo.}
+%  \label{fig:usn-logo-en}
+%\end{figure}
+
+%\lipsum[9]
+
+%\chapter{Diskusjon}
+%\label{sec:diskusjon}
+
+%<Utfør diskusjonen her>
+
+%The differential forms of Maxwell's equations as found by Heaviside, while completely valid, are now considered somewhat archaic, and have been replaced by the more useful (equivalent) integral forms. Each law is named according to the person(s) who originally discovered the connections represented by the equation. Here are the four equations\eqref{eq:gaussele} to \eqref{eq:max}
+
+%\begin{eqnarray}
+%  \text{Gauss' law for electricity:}& \displaystyle \oint{\vec{E}\cdot\mathrm{d}\vec{A}}&=\frac{Q_{enc}}%{\epsilon_0}\label{eq:gaussele}\\
+%  \text{Gauss' law for magnetism:}& \displaystyle \oint{\vec{B}\cdot\mathrm{d}\vec{A}}&=0\label{eq:gaussmag}\\
+%  \text{Faraday's law:}& \displaystyle\oint{\vec{E}\cdot\mathrm{d}\vec{s}}&=-\frac{\emph{d}\phi_b}{\mathrm{d}t}\label{eq:fara}\\
+%  \text{Ampere-Maxwell law:}& \displaystyle\oint{\vec{B}\cdot\mathrm{d}\vec{s}}&=\mu_0\epsilon_0\frac{\emph{d}\phi_e}{\mathrm{d}t}+\mu_0 i_{enc}\label{eq:max}
+%\end{eqnarray}
+
+%Note: $\oint$ is used to specify a closed loop integral, also known as a line integral. It simply means that in the calculations, we must go all the way around the loop; we can't stop part way through or the equations won't be valid.
+
+%\chapter{Konklusjon}
+%\label{sec:konklusjon}
+%<Skriv konklusjonen her>
+
+%\begin{table}[!ht]
+% \caption{The weather forecast}
+%  \centering
+%   \begin{tabular}{| l | l | l | p{5cm} |}
+%    \hline
+%    Day & Min Temp & Max Temp & Summary \\ \hline
+%    Monday & 11C & 22C & A clear day with lots of sunshine.
+%    However, the strong breeze will bring down the temperatures. \\ \hline
+%    Tuesday & 9C & 19C & Cloudy with rain, across many northern regions. Clear spells
+%    across most of Scotland and Northern Ireland,
+%    but rain reaching the far northwest. \\ \hline
+%    Wednesday & 10C & 21C & Rain will still linger for the morning.
+%    Conditions will improve by early afternoon and continue
+%    throughout the evening. \\
+%    \hline
+%    \end{tabular}
+%\end{table}
+
+
+% A dummy command that causes all bibliographyentries to be displayed
+% even though there were not cited in the document. Used for demonstration
+% purposes only in this template file.
+~\nocite{*}
+
+\cleardoublepage
+
+% The bibliography should be displayed here...
+%\printbibliography[heading=bibintoc]
+% You rather like to call the bibliography "References"? Then use this instead:
+\printbibliography[heading=bibintoc, title={References}]
+
+
+\appendix
+
+
+%\chapter{Operating System Architecture}
+%\label{ch:osarch}
+%\input{appendices/OperatingSystem}
+
+\chapter{Hardware}
+\label{ch:hardware}
+\input{appendices/Hardware}
+
+\chapter{UAV}
+\label{ch:UAV}
+\input{appendices/UAV}
+
+\chapter{Config4 Code Explanation and Analysis}
+\label{ch:algo}
+\input{appendices/Algorithms}
+
+\chapter{ROS1 to ROS2}
+\label{ch:ros1toros2}
+\input{appendices/Qualisys}
+
+%\chapter{Configuration 4}
+%\label{appendix:config4}
+%\input{appendices/BlobAppendix}
+
+\chapter{Yolo training Tutorial}
+\label{appendix:Yolo Training Tutorial}
+\input{appendices/YOLO training}
+
+\chapter{Source code, ROS2 nodes}
+\label{appendix:NodeCode}
+\input{appendices/NodeCode}
+
+\chapter{Tensorflow Lite Model Maker script}
+\label{appendix:ModelMaker}
+\input{appendices/ModelMaker}
+
+\chapter{Team}
+\label{appendix:teaminfo}
+\input{appendices/Team}
+
+\includepdf[pages=1,clip,trim=0.1cm 0.1cm 0.1cm 0.1cm]{PDF/Gruppeoversikt}
+\includepdf[pages=2,clip,trim=0.1cm 0.1cm 0.1cm 0.1cm]{PDF/Gruppeoversikt}
+
+
+%\includepdf[pages=1,scale=1]{PDF/Gruppeoversikt}
+%\includepdf[pages=2,scale=1]{PDF/Gruppeoversikt}
+
+%\renewcommand{\appendixname}{NEWNAME} %% You can change the name of the appendix chapter
+
+%\part{Published and Submitted Papers}  %% DO NOT USE \part FOR MONOGRAPH
+%\label{part:papers}
+
+
+%\chapter[Short Title of Paper A]{Title of Paper A (probably very long and therefore not good to have in the header)}
+%\label{paper-a}
+
+%\paragraph{Note}
+%Since some papers tend to have a rather long title it is good to provide the optional short title which then will be displayed in the table of contents and header instead of the long original title.
+%On the opening page of the chapter the original \emph{long} title will be displayed.\bigskip
+
+%\emph{Short descriptive text of paper follows here.}\bigskip
+
+%The paper needs to be included in the published form as PDF on the next pages.
+%This can be done using the \texttt{pdfpages} package by adding the command:
+
+%\begin{verbatim}
+%\includepdf{pages=-,openright}{Filename}
+%\end{verbatim}
+
+%You can omit the \texttt{.pdf} when specifying the \texttt{Filename}. Also you should include always include the option \texttt{openright} since it would look strange to have the paper starting at the back of the cover page.
+
+%There are more options like only adding specific pages:
+%\begin{verbatim}
+%\includepdf{pages=2-6,openright}{Filename.pdf}
+%\end{verbatim}
+
+%For more options see Appendix~\ref{paper-b} where the most important pages of the \texttt{pdfpages} manual were inlcuded using \texttt{pdfpages}.
+
+
+%%% Command to include a PDF file directly including all pages:
+
+
+%\chapter[Short Title of Paper B]{Title of Paper B}
+%\label{paper-b}
+%Short descriptive text of paper follows here.
+
+%Here we included the first five pages of the \texttt{pdfpages} manual itself.
+
+%\includepdf[pages=1-5,openright]{fig/pdfpages}
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

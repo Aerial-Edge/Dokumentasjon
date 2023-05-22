@@ -1,0 +1,120 @@
+\section{Translating from ROS1 to ROS2}
+
+The following documentation describes our process of translating from ROS1 to ROS2. It's important to note that this translation does not represent an optimal approach. Although improvements could be implemented to enhance the efficiency and readability of the code, the aim of this translation was to ensure compatibility with ROS2, maintaining performance, and providing satisfactory results in the tests we conducted. This document also assumes that the reader have some knowledge about ROS2 or 1.
+
+\subsection{Syntax Changes}
+
+The syntax of ROS1 and ROS2, while largely similar, exhibits several distinctions primarily associated with changes in the architectural structure of scripts. Among the differences, library usage stands out:
+
+\begin{lstlisting}[language=PythonPlus]
+#ROS1
+import rospy
+import rosgraph
+
+#ROS2
+import rclpy
+from rclpy.node import Node
+\end{lstlisting}
+
+In ROS1, rospy and rosgraph serve as the key libraries for node creation and computation graph visualization. Transitioning to ROS2, rclpy replaces these libraries, providing a Python API for ROS2 interactions, with the Node class encapsulating a node within the ROS graph.
+
+Moreover, modifications were also made to logging functions. Despite the changes, the functions retain a similar operational manner:
+
+\begin{lstlisting}[language=PythonPlus]
+#ROS1
+rospy.loginfo()
+
+#ROS2
+get_logger().info()
+\end{lstlisting}
+
+\subsection{Architecture}
+
+The most significant modifications involved the creation and architecture of the ROS nodes. In ROS2, a class is established that inherits from the rclpy node class. Within this class, the node is named, and subscribers, publishers, and other necessary variables for the node are added. Subsequently, this node is initialized within the main function:
+
+\begin{lstlisting}[language=PythonPlus]
+#ROS2
+class Qualisys_node(Node):
+
+    def __init__(self):
+        super().__init__('qualisys_node')
+
+        self.pub = self.create_publisher(DronePose, 'drone_pose', 10)
+
+\end{lstlisting}
+
+All the functions that the class will utilize are defined within it, incorporating the \verb|self| parameter for invocations within the class:
+
+\begin{lstlisting}[language=PythonPlus]
+#ROS2
+class Qualisys_node(Node):
+
+    def __init__(self):
+    def talker(self, data):
+    def create_msg(self,x,y,z,v_x,v_y,v_z,a_x,a_y,a_z,yaw,v_yaw,freq,full_msg):
+    def calculate_vel_a(self,position,freq, yaw):
+    def calc(self,position,rot,freq):
+    def create_body_index(self, xml_string):
+    def get_freq(self, xml_string):
+    async def qtmMain(self):
+
+\end{lstlisting}
+
+This stands in contrast to the ROS1 architecture, where an overarching class to manage the functions does not exist. Instead, a main function is utilized that accepts the publisher as a parameter:
+
+\begin{lstlisting}[language=PythonPlus]
+#ROS1
+async def mainQualisys(pub):
+
+\end{lstlisting}
+
+In ROS1, this main function for the node is what runs indefinitely. Unlike in ROS2, where a class object is initiated to run endlessly. Our modifications to the loops were minor and mainly involved creating variables and tasks:
+
+\begin{lstlisting}[language=PythonPlus]
+#ROS1
+asyncio.ensure_future(mainQualisys(pub))
+asyncio.get_event_loop().run_forever()
+
+#ROS2
+loop = asyncio.get_event_loop()
+qtm_task = loop.create_task(qtm_node.qtmMain())
+...
+asyncio.ensure_future(qtm_task)
+loop.run_forever()
+
+\end{lstlisting}
+
+Although the main functions in ROS1 and ROS2 might appear different, they operate similarly in that the node is initialized within the main function. However, in ROS1, subscribers and publishers are also created within the main:
+
+\begin{lstlisting}[language=PythonPlus]
+#ROS1
+if __name__ == "__main__":
+    rospy.init_node('qualisys', anonymous=True) #Node initialization
+    pub = rospy.Publisher('/drone_controller/current_pos', DronePose, queue_size=10) #create publisher
+
+#ROS2
+def main(args=None):
+    rclpy.init(args=args) #Node initialization
+    qtm_node = Qualisys_node() #Creates Node
+\end{lstlisting}
+
+Upon executing the code with these modifications, we encountered some issues with the data received from Qualisys. It was not in the same format as expected by the \verb|create_msg| function. To resolve this issue, we initialized the values outside the class, which corrected the problem of acquiring initial values from Qualisys:
+
+\begin{lstlisting}[language=PythonPlus]
+#ROS2
+if prev_msg is None:
+    prev_msg = DronePose()
+    prev_msg.pos.x = 0.0
+    prev_msg.pos.y = 0.0
+    prev_msg.pos.z = 0.0
+    prev_msg.vel.x = 0.0
+    prev_msg.vel.y = 0.0
+    prev_msg.vel.z = 0.0
+    prev_msg.yaw.data = 0.0
+
+if prev_vel is None:
+    prev_vel = [0.0, 0.0, 0.0] 
+
+\end{lstlisting}
+
+

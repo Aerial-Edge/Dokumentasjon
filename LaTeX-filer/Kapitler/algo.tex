@@ -1,0 +1,80 @@
+\title{algorithms}
+
+
+\section{Distance and Color detection}
+
+Since we use the Raspberry Pi Camera Module v3 and not a depth camera, we need to find a way to find the distance to a known object. We ended up using OpenCV and cvzone. Our approach involves detecting a specific color in the video frames, identifying the contours of the detected object, and then calculating the distance based on the object's apparent size in the image.
+
+First, we import the necessary packages for image processing, numerical operations, and color detection:
+
+\begin{lstlisting}[language=PythonPlus]
+import cv2
+import cvzone
+from cvzone.ColorModule import ColorFinder
+import numpy as np
+\end{lstlisting}
+
+We create a VideoCapture object (OpenCV) to read video frames from the camera , and set the capture dimensions to 640x480 pixels:
+
+\begin{lstlisting}[language=PythonPlus]
+cap = cv2.VideoCapture(0)
+cap.set(3, 640)
+cap.set(4, 480)
+\end{lstlisting}
+
+Next, we create a ColorFinder object (cvzone) with automatic color range update turned off , and define the color range for detection (using predetermined HSV values):
+
+\begin{lstlisting}[language=PythonPlus]
+myColorFinder = ColorFinder(False)
+hsvVals = {'hmin': 97, 'smin': 21, 'vmin': 23, 'hmax': 125, 'smax': 255, 'vmax': 193}
+\end{lstlisting}
+
+In a continuous loop, we read the video frames from the camera (OpenCV) , detect the specified color range in the image using the ColorFinder object (cvzone), and find the contours in the binary mask (cvzone):
+
+\begin{lstlisting}[language=PythonPlus]
+while True:
+    success, img = cap.read()
+    imgColor, mask = myColorFinder.update(img, hsvVals)
+    imgContour, contours = cvzone.findContours(img, mask)
+\end{lstlisting}
+
+When contours are detected, we extract data from the first contour (assumed to be the object of interest) and calculate the distance to the object based on its apparent size in the image. We use the real-world dimensions of the object (in this case, a tennis ball with a width of 6.5 cm) and the camera's focal length to compute the distance:
+
+\begin{lstlisting}[language=PythonPlus]
+if contours:
+    data = contours[0]['center'][0], h - contours[0]['center'][1], int(contours[0]['area'])
+    
+    f = 535  # focal length of the camera
+    W = 6.5  # real-world width of the tennis ball
+
+    w = np.sqrt(contours[0]['area']/np.pi) * 2  # width of the tennis ball in the image
+    d = (W * f) / w  # calculate the distance
+
+    print(d)
+\end{lstlisting}
+
+Finally, we display the distance in centimeters on the image (cvzone)  and stack the original image, detected color image, binary mask, and contour image for visualization (cvzone) this is done for testing purpose:
+
+\begin{lstlisting}[language=PythonPlus]
+cvzone.putTextRect(img, f'depth: {int(d)} cm', (contours[0]['center'][0] - 75, contours[0]['center'][1] - 50), scale= 2)
+imgStack = cvzone.stackImages([img, imgColor, mask, imgContour], 2, 0.5)
+cv2.imshow("Image", imgStack)
+cv2.waitKey(1)
+\end{lstlisting}
+
+This approach is suitable for objects with known dimensions and relatively uniform color distribution. This testing was used with simple color detection. We can use this method to use the contours of trained models to find the distance as well. 
+
+%References:
+
+%[1] OpenCV VideoCapture. Retrieved from https://docs.opencv.org/master/d8/dfe/classcv_1_1VideoCapture.html
+
+%[2] OpenCV VideoCapture::set. Retrieved from https://docs.opencv.org/master/d8/dfe/classcv_1_1VideoCapture.html#aa6480e6972ef4c00d74814ec841a2939
+
+%[3] Cvzone. (02.22). ColorModule. Retrieved from  https://github.com/cvzone/cvzone/blob/master/cvzone/ColorModule.py
+
+%[4] Cvzone. (02.22). findContours. Retrieved from https://github.com/cvzone/cvzone/blob/master/cvzone/Utils.py#L81
+
+%[5] Cvzone. (02.22). putTextRect. Retrieved from https://github.com/cvzone/cvzone/blob/master/cvzone/Utils.py#L145
+
+%[6] Cvzone. (02.22). stackImages. Retrieved from https://github.com/cvzone/cvzone/blob/master/cvzone/Utils.py#L12
+

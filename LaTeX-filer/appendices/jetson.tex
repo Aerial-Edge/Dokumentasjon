@@ -1,0 +1,53 @@
+NVIDIA Jetson Nano (configuration 1)
+
+Initial setup
+
+The NVIDIA Jetson Nano platform employs a software development kit (SDK) image known as JetPack, specifically version 4.6.1, which is the newest compatible version for the Jetson Nano device. JetPack 4.6.1 is built upon Ubuntu 18.04 (Bionic Beaver) and utilizes Python 3.6.9. The image is preconfigured with several essential developer tools, including TensorRT, cuDNN, and CUDA.
+
+To flash the image onto the Jetson Nano, one can either use a terminal or the NVIDIA SDK Manager, which can be accessed at \cite{Jetson_sdk_manager}. It is strongly recommended to employ the NVIDIA SDK Manager for this task, as it significantly simplifies the installation process for the image and any additional SDKs. However, this method necessitates that the computer used for flashing possesses the same operating system as the target image. In the present case, the computer required reformatting to Ubuntu 18.04 to ensure compatibility.
+
+
+
+Alternatively, the SD card can be directly flashed using the terminal. The necessary image can be obtained from the NVIDIA developer site \cite{Jetpack_461}. Subsequent instructions specific to your operating system can be found at \cite{Jetpack_461_write_to_sd}.
+
+Following this, the NVIDIA SDK Manager can be used to install all additional SDKs via Secure Shell (SSH). This approach upholds the user-friendliness and efficient process inherent to the SDK Manager. 
+
+
+
+In this study, two distinct methods of object detection were evaluated on the Jetson Nano platform: YOLOv5 and MobileNet-SSD. Both approaches demonstrated promising potential, each with unique advantages and limitations.
+
+Object Detection on Jetson Nano
+
+Implementation of YOLOv5
+
+
+The process of deploying YOLOv5 on the Jetson Nano platform proved to be more complex compared to the implementation of MobileNet-SSD. The YOLOv5 documentation provides a dedicated page for its application on a Jetson Nano using a Software Development Kit (SDK) from Nvidia named Deepstream. However, the tutorial \cite{yolo_on_jetson}, last updated 18 November 2022) is not as straightforward as it might appear.
+
+
+The initial step requires the use of a PC running Ubuntu 18.04 to operate the Nvidia SDK Manager in conjunction with the Jetson Nano. Following this, the installation of several additional packages, one of which is Deepstream, is necessary. This part of the procedure is fairly linear and should already be done with the initial setup of the Jetson.
+
+The challenge arises when attempting to run YOLO, since YOLOv5 necessitates Python 3.7, while the Jetson Nano only supports Python 3.6.9, this is because the installation was done on a Jetson  After cloning the repository, all entries in the requirements.txt file were commented out. Subsequent to numerous trials and errors, the tested system runs the following versions.
+
+gitpython>=3.1.20\\
+matplotlib>=3.3.4\\
+numpy>=1.19.5\\
+opencv-python>=4.1.1\\
+Pillow>=7.1.2\\
+psutil\\
+PyYAML>=6.0\\
+requests>=2.18.4\\
+scipy>=1.5.4\\
+thop>=0.1.1\\
+tqdm>=4.64.1\\
+seaborn>=0.11.0\\
+setuptools>=59.6.0\\
+
+
+Follow the rest steps on the github until DeepStream Configuration for YOLOv5 Step 4. Generate the cfg and wts files.\\
+
+Implementation of MobileNet-SSD
+Jetson Inference, a GitHub repository developed by Dustin Franklin from Nvidia, provides a well-documented tutorial complete with video walkthroughs, which is particularly beneficial for beginners in the field of computer vision working on the Jetson device.
+
+The pretrained model demonstrated satisfactory performance at shorter distances but struggled with object detection when the objects were small or located at greater distances. To address this, transfer learning was applied to the model using our dataset, both on the Jetson device and on a separate computer equipped with a dedicated GPU. Despite training the model for over 1000 epochs, the inference failed to detect the object.
+
+A survey of online forums confirmed that the model encountered difficulties with small objects. An attempt was made to upgrade the model to accommodate an input resolution of 512x512 instead of the standard 300x300. This was tried, and while this modification slightly improved the model's performance, it did not reach the level of the YOLO model trained earlier in the study. As a result, a decision was made to revisit YOLOv5.

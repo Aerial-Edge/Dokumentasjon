@@ -1,0 +1,52 @@
+\section{Tensorflow Lite Model Maker script}
+
+\begin{lstlisting}[language=PythonPlus, basicstyle=\tiny,]
+
+from tflite_model_maker import model_spec
+from tflite_model_maker import object_detector
+import tensorflow as tf
+
+# Only log errors
+tf.get_logger().setLevel('ERROR')
+
+# Load train, validation and test data. Arguments 1 and 2 are relative paths
+# to image and annotation file directory, 3rd argument is a label map.
+training_data = object_detector.DataLoader.from_pascal_voc(
+    'training_images2', 'training_images2', ['Greenball']
+)
+
+validation_data = object_detector.DataLoader.from_pascal_voc(
+    'validation_images2', 'validation_images2', ['Greenball']
+)
+
+test_data = object_detector.DataLoader.from_pascal_voc(
+    'test_images', 'test_images', ['Greenball']
+)
+
+# Select pretrained model and directory for storing temp data
+spec = model_spec.get('efficientdet_lite1', model_dir='D:/tfTemp/edl1_1k')
+# Number of passes through full dataset
+epochs = 1000
+# Number of batches the full dataset is divided into
+# Higher batch size = faster training
+# Max batch size depends on available video memory
+batch_size = 16
+
+# Start training/create model
+model = object_detector.create(training_data, model_spec=spec,
+batch_size=batch_size, train_whole_model=True,
+epochs=epochs, validation_data=validation_data)
+# Evaluate Tensorflow model
+eval_result = model.evaluate(test_data)
+# Convert to Tensorflow Lite model
+model.export(export_dir='export', tflite_filename='edl1_1k.tflite')
+# Evaluate Tensorflow Lite model
+tflite_eval_result = model.evaluate_tflite('export/edl1_1k.tflite', test_data)
+
+print(eval_result)
+print("-------------------")
+
+# This returns the final precision and recall scores achieved on the test data set
+print(tflite_eval_result)
+
+\end{lstlisting}
