@@ -1,0 +1,48 @@
+HVA ØNSKER KDA?
+
+KDA søker kunnskap om software- og hardwarearkitektur for autonome droner med totalvekt under 1kg.
+De ønsker at vi utforsker distribuerte maskinvareløsninger for å flytte regnekraft nærmest mulig sensorer.
+
+HVORDAN SKAL VI GJØRE DET?
+
+Mål 1:
+
+HVA?
+
+Designe 3-5 forskjellige høynivå maskinvare- og programvarearkitekturer for autonom drone med objektsporing kapabilitet.
+
+PROSESS?
+
+Research, eksisterende løsninger.
+Research, tilgjengelig maskinvare og programvare.
+
+Mål 2:
+
+HVA?
+
+Fullstendig design og implementasjon av 3-5 forskjellige maskinvare- og programvarearkitekturer.
+
+PROSESS?
+
+Teamet jobber parallelt med flere design samtidig.
+Designene skal i første omgang implementeres som stasjonære enheter.
+
+Mål 3:
+
+HVA?
+
+Teste bildeprosseseringsytelse hos alle løsningene. Sammenlikne resultater.
+
+PROSESS?
+
+Måle ytelsen ved sporing av objekter i kontrollert testområde.
+
+Mål 4 (Hvis tid):
+
+HVA?
+
+Implementere de to høyest ytende løsningene på drone.
+
+
+
+
